@@ -6,6 +6,8 @@ sticky: 1
 
 ECharts 中的 Liquidfill（液体填充图）是一种图表类型，用于直观地显示填充量与总量之间的比例关系。Liquidfill 图表通常用于展示百分比数据，通过液体的填充高度来表示数据的比例。你可以通过 ECharts 的 API 来创建和配置 Liquidfill 图表，以展示你的数据。
 
+[Github:https://github.com/ecomfe/echarts-liquidfill](https://github.com/ecomfe/echarts-liquidfill)
+
 ![图片](https://camo.githubusercontent.com/bc1949282b49799b3f11b0d7def8428b1f2a000b53112003bc91b01e7adfecc4/687474703a2f2f672e7265636f726469742e636f2f7a48654d71716c68346a2e676966)
 
 ## 安装
