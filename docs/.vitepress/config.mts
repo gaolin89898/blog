@@ -27,7 +27,14 @@ export default defineConfig({
     logo: "/logo.jpg",
     nav: [
       { text: "首页", link: "/" },
-      { text: "组件文档", link: "/sop/EchartsLiquidfill.md" },
+      {
+        text: "组件文档",
+        items: [
+          { text: "echarts-liquidfill", link: "/sop/EchartsLiquidfill.md" },
+          { text: "vue-drag-resize", link: "/sop/VueDragResize.md" },
+        ],
+      },
+      { text: "工具配置", link: "" },
     ],
     socialLinks: [
       {
