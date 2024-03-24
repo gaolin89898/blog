@@ -7,6 +7,7 @@ export default defineConfig({
   title: "高木木的博客",
   description: "高木木的博客，基于 vitepress 实现",
   lastUpdated: true,
+  cleanUrls: true,
   head: [
     // 配置网站的图标（显示在浏览器的 tab 上）
     // ['link', { rel: 'icon', href: `${base}favicon.ico` }], // 修改了 base 这里也需要同步修改
@@ -34,7 +35,10 @@ export default defineConfig({
           { text: "vue-drag-resize", link: "/sop/VueDragResize.md" },
         ],
       },
-      { text: "工具配置", link: "" },
+      {
+        text: "工具配置",
+        items: [{ text: "oh-my-posh", link: "/sop/OnMyPosh.md" }],
+      },
     ],
     socialLinks: [
       {
