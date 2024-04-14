@@ -2,13 +2,19 @@
 sticky: 1
 ---
 
-# Echarts-Liquidfill（液体填充图）
+<script steup>
+  import * as echarts from 'echarts';
+  import 'echarts-liquidfill';
+
+</script>
+
+# echarts-liquidfill（液体填充图）
 
 ECharts 中的 Liquidfill（液体填充图）是一种图表类型，用于直观地显示填充量与总量之间的比例关系。Liquidfill 图表通常用于展示百分比数据，通过液体的填充高度来表示数据的比例。你可以通过 ECharts 的 API 来创建和配置 Liquidfill 图表，以展示你的数据。
 
 [Github:https://github.com/ecomfe/echarts-liquidfill](https://github.com/ecomfe/echarts-liquidfill)
 
-![图片](https://camo.githubusercontent.com/bc1949282b49799b3f11b0d7def8428b1f2a000b53112003bc91b01e7adfecc4/687474703a2f2f672e7265636f726469742e636f2f7a48654d71716c68346a2e676966)
+![图片](http://picturebed.gaolin.online/blog/echarts-liquidfill/echarts-liquidfill.png)
 
 ## 安装
 
@@ -33,37 +39,10 @@ import * as echarts from "echarts";
 import "echarts-liquidfill";
 ```
 
-<!-- ## 基本用法
+## DOME
+<a-button type="primary">Primary</a-button>
 
-```js
-const option = {
-  series: [
-    {
-      type: "liquidFill",
-      data: [0.6],
-    },
-  ],
-};
-```
 
-![图片](https://camo.githubusercontent.com/a9f0968a7db8e810f8fcd87d5112cca156e3105b7ddfa5807f8866ac560607b6/687474703a2f2f672e7265636f726469742e636f2f52736a556c6f36394a4e2e676966)
-
-## 多波纹
-
-```js
-const option = {
-  series: [
-    {
-      type: "liquidFill",
-      data: [0.6, 0.5, 0.4, 0.3],
-    },
-  ],
-};
-```
-
-![图片](https://camo.githubusercontent.com/8807e83987fe4b8306c3717b6f8fb53392a3a143d720c96eb014876d7a3fde1a/687474703a2f2f672e7265636f726469742e636f2f484a337a334954717a4c2e676966)
-
-## 颜色和不透明度 -->
 
 ## API
 
