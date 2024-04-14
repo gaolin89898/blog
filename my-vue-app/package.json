@@ -1,0 +1,27 @@
+{
+  "name": "my-vue-app",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vue-tsc && vite build",
+    "preview": "vite preview",
+    "docs:dev": "vitepress dev docs",
+    "docs:build": "vitepress build docs"
+  },
+  "dependencies": {
+    "unplugin-auto-import": "^0.17.5",
+    "unplugin-vue-components": "^0.26.0",
+    "vue": "^3.4.21"
+  },
+  "devDependencies": {
+    "@arco-design/web-vue": "^2.55.1",
+    "@vitejs/plugin-vue": "^5.0.4",
+    "typescript": "^5.2.2",
+    "vite": "^5.2.0",
+    "vitepress": "^1.1.0",
+    "vitepress-theme-demoblock": "^3.0.7",
+    "vue-tsc": "^2.0.6"
+  }
+}
