@@ -2,9 +2,9 @@
 sticky: 1
 ---
 
-# vue-drag-resize（拖动-调整大小的 VUE 组件）
+# vue-drag-resize（拖动-调整大小的 vue 组件）
 
-用于可拖动和可调整大小的元素的 Vue 组件。
+用于可拖动和可调整大小的元素的 vue 组件。
 
 [Github:https://github.com/kirillmurashov/vue-drag-resize](https://github.com/kirillmurashov/vue-drag-resize)
 
@@ -16,6 +16,10 @@ sticky: 1
 $ npm i -s vue-drag-resize
 
 ```
+
+## Docs
+
+<VueDragResize></VueDragResize>
 
 ## 引入
 

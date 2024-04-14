@@ -15,7 +15,8 @@
     "echarts": "^5.5.0",
     "echarts-liquidfill": "^3.1.0",
     "element-plus": "^2.5.3",
-    "vue": "3.4.21"
+    "vue": "3.4.21",
+    "vue-drag-resize": "^1.5.4"
   },
   "directories": {
     "doc": "docs"
