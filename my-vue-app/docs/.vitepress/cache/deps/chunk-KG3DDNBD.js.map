@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../node_modules/.pnpm/mermaid@10.9.0/node_modules/mermaid/dist/channel-d3ac35ac.js"],
+  "sourcesContent": ["import { aI as _, aJ as Color } from \"./mermaid-c5809711.js\";\nconst channel = (color, channel2) => {\n  return _.lang.round(Color.parse(color)[channel2]);\n};\nconst channel$1 = channel;\nexport {\n  channel$1 as c\n};\n"],
+  "mappings": ";;;;;;AACA,IAAM,UAAU,CAAC,OAAO,aAAa;AACnC,SAAO,EAAE,KAAK,MAAM,QAAM,MAAM,KAAK,EAAE,QAAQ,CAAC;AAClD;AACA,IAAM,YAAY;",
+  "names": []
+}

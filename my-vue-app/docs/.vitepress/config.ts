@@ -1,69 +1,50 @@
 import { defineConfig } from "vitepress";
-// import { demoBlockPlugin } from "vitepress-theme-demoblock";
+import { blogTheme } from "./blog-theme";
 
 export default defineConfig({
+  extends: blogTheme,
+  lang: "zh-cn",
   title: "高木木的博客",
-  description: "基于Element-plus基础组件封装使用",
-  lang: "cn-ZH",
-  base: "/blog/",
+  description: "高木木的博客，基于 vitepress 实现",
   lastUpdated: true,
+  cleanUrls: true,
+  head: [
+    // 配置网站的图标（显示在浏览器的 tab 上）
+    // ['link', { rel: 'icon', href: `${base}favicon.ico` }], // 修改了 base 这里也需要同步修改
+    ["link", { rel: "icon", href: "/favicon.ico" }],
+  ],
   themeConfig: {
-    logo: "/favicon.ico",
-    siteTitle: "高木木的博客",
-    outline: 3,
-    socialLinks: [
-      { icon: "github", link: "https://github.com/wocwin/t-ui-plus" },
-    ],
+    // 展示 2,3 级标题在目录中
+    outline: {
+      level: [2, 3],
+      label: "目录",
+    },
+    // 默认文案修改
+    returnToTopLabel: "回到顶部",
+    sidebarMenuLabel: "相关文章",
+    lastUpdatedText: "上次更新于",
+
+    // 设置logo
+    logo: "/logo.jpg",
     nav: [
+      { text: "首页", link: "/" },
       {
-        text: "GitHub地址",
-        link: "https://github.com/wocwin/t-ui-plus",
-      },
-      {
-        text: "Gitee码云地址",
-        link: "https://gitee.com/wocwin/t-ui-plus",
-      },
-      {
-        text: "博客",
+        text: "组件文档",
         items: [
-          {
-            text: "掘金",
-            link: "https://juejin.cn/user/888061128344087/posts",
-          },
+          { text: "echarts-liquidfill", link: "/sop/EchartsLiquidfill.md" },
+          { text: "vue-drag-resize", link: "/sop/VueDragResize.md" },
         ],
       },
+      {
+        text: "工具配置",
+        items: [{ text: "oh-my-posh", link: "/sop/OnMyPosh.md" }],
+      },
     ],
-    sidebar: {
-      "/components": [
-        {
-          text: "常用组件",
-          items: [
-            { text: "下拉选择组件", link: "/components/TSelect/base.md" },
-            {
-              text: "下拉选择表格组件",
-              link: "/components/TSelectTable/base.md",
-            },
-          ],
-        },
-        {
-          text: "复杂组件",
-          items: [
-            {
-              text: "条件查询组件",
-              link: "/components/TQueryCondition/base.md",
-            },
-            { text: "表单组件", link: "/components/TForm/base.md" },
-            { text: "table组件", link: "/components/TTable/base.md" },
-          ],
-        },
-      ],
-    },
+    socialLinks: [
+      {
+        icon: "github",
+        link: "https://github.com/gaolin89898/blog",
+      },
+    ],
   },
-  // markdown: {
-  //   config(md) {
-  //     md.use(demoBlockPlugin, {
-  //       customClass: "demoblock-custom",
-  //     });
-  //   },
-  // },
 });

@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../node_modules/.pnpm/vue-drag-resize@1.5.4/node_modules/vue-drag-resize/src/index.js"],
+  "sourcesContent": ["// Import vue component\nimport VueDragResize from './components/vue-drag-resize.vue';\n\n// Declare install function executed by Vue.use()\nexport function install(Vue) {\n    if (install.installed) return;\n    install.installed = true;\n    Vue.component('vue-drag-resize', VueDragResize);\n}\n\n// Create module definition for Vue.use()\nconst plugin = {\n    install,\n};\n\n// Auto-install when vue is found (eg. in browser via <script> tag)\nlet GlobalVue = null;\nif (typeof window !== 'undefined') {\n    GlobalVue = window.Vue;\n} else if (typeof global !== 'undefined') {\n    GlobalVue = global.Vue;\n}\nif (GlobalVue) {\n    GlobalVue.use(plugin);\n}\n\n// To allow use as module (npm/webpack/etc.) export component\nexport default VueDragResize;"],
+  "mappings": ";;;AACA,OAAO,mBAAmB;AAGnB,SAAS,QAAQ,KAAK;AACzB,MAAI,QAAQ;AAAW;AACvB,UAAQ,YAAY;AACpB,MAAI,UAAU,mBAAmB,aAAa;AAClD;AAGA,IAAM,SAAS;AAAA,EACX;AACJ;AAGA,IAAI,YAAY;AAChB,IAAI,OAAO,WAAW,aAAa;AAC/B,cAAY,OAAO;AACvB,WAAW,OAAO,WAAW,aAAa;AACtC,cAAY,OAAO;AACvB;AACA,IAAI,WAAW;AACX,YAAU,IAAI,MAAM;AACxB;AAGA,IAAO,cAAQ;",
+  "names": []
+}

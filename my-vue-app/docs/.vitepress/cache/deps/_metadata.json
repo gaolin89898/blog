@@ -1,40 +1,193 @@
 {
-  "hash": "bc4b6b87",
-  "configHash": "00307ab9",
-  "lockfileHash": "deb54915",
-  "browserHash": "365870ce",
+  "hash": "9eb59ea3",
+  "configHash": "bdf1fcf6",
+  "lockfileHash": "59751e35",
+  "browserHash": "3c925fe7",
   "optimized": {
     "vue": {
       "src": "../../../../node_modules/.pnpm/vue@3.4.21_typescript@5.4.5/node_modules/vue/dist/vue.runtime.esm-bundler.js",
       "file": "vue.js",
-      "fileHash": "56246764",
+      "fileHash": "22e2951a",
       "needsInterop": false
     },
     "vitepress > @vue/devtools-api": {
       "src": "../../../../node_modules/.pnpm/@vue+devtools-api@7.0.27_vue@3.4.21/node_modules/@vue/devtools-api/dist/index.js",
       "file": "vitepress___@vue_devtools-api.js",
-      "fileHash": "7129c2c9",
+      "fileHash": "f2128991",
       "needsInterop": false
     },
     "vitepress > @vueuse/core": {
       "src": "../../../../node_modules/.pnpm/@vueuse+core@10.9.0_vue@3.4.21/node_modules/@vueuse/core/index.mjs",
       "file": "vitepress___@vueuse_core.js",
-      "fileHash": "ae62355c",
+      "fileHash": "d2a2fe58",
       "needsInterop": false
     },
-    "@theme/index": {
-      "src": "../../../../node_modules/.pnpm/vitepress@1.1.0_@algolia+client-search@4.23.3_sass@1.75.0_search-insights@2.13.0_typescript@5.4.5/node_modules/vitepress/dist/client/theme-default/index.js",
-      "file": "@theme_index.js",
-      "fileHash": "ca16d9ba",
+    "element-plus": {
+      "src": "../../../../node_modules/.pnpm/element-plus@2.7.0_vue@3.4.21/node_modules/element-plus/es/index.mjs",
+      "file": "element-plus.js",
+      "fileHash": "df63a03b",
+      "needsInterop": false
+    },
+    "mermaid": {
+      "src": "../../../../node_modules/.pnpm/mermaid@10.9.0/node_modules/mermaid/dist/mermaid.esm.mjs",
+      "file": "mermaid.js",
+      "fileHash": "adfcd218",
+      "needsInterop": false
+    },
+    "vue-demi": {
+      "src": "../../../../node_modules/.pnpm/vitepress@1.1.0_@algolia+client-search@4.23.3_sass@1.75.0_search-insights@2.13.0_typescript@5.4.5/node_modules/vitepress/lib/vue-demi.mjs",
+      "file": "vue-demi.js",
+      "fileHash": "b596ae64",
+      "needsInterop": false
+    },
+    "vue-drag-resize/src": {
+      "src": "../../../../node_modules/.pnpm/vue-drag-resize@1.5.4/node_modules/vue-drag-resize/src/index.js",
+      "file": "vue-drag-resize_src.js",
+      "fileHash": "b23556da",
       "needsInterop": false
     }
   },
   "chunks": {
-    "chunk-NATOTIVK": {
-      "file": "chunk-NATOTIVK.js"
+    "journeyDiagram-a5efd2e1-EVNIG5YE": {
+      "file": "journeyDiagram-a5efd2e1-EVNIG5YE.js"
     },
-    "chunk-IY6CN43X": {
-      "file": "chunk-IY6CN43X.js"
+    "flowchart-elk-definition-1a3aaf5d-UFNA2XUU": {
+      "file": "flowchart-elk-definition-1a3aaf5d-UFNA2XUU.js"
+    },
+    "timeline-definition-f8c5dfc0-GLCAC7G3": {
+      "file": "timeline-definition-f8c5dfc0-GLCAC7G3.js"
+    },
+    "mindmap-definition-74120bdd-QXEVCF66": {
+      "file": "mindmap-definition-74120bdd-QXEVCF66.js"
+    },
+    "sankeyDiagram-f5d051b7-TBMYLS7I": {
+      "file": "sankeyDiagram-f5d051b7-TBMYLS7I.js"
+    },
+    "blockDiagram-8beecd1f-PNIC62HI": {
+      "file": "blockDiagram-8beecd1f-PNIC62HI.js"
+    },
+    "chunk-VDDZ4XYT": {
+      "file": "chunk-VDDZ4XYT.js"
+    },
+    "quadrantDiagram-9c93c009-FUHF5WLN": {
+      "file": "quadrantDiagram-9c93c009-FUHF5WLN.js"
+    },
+    "xychartDiagram-7b46ecfd-572KILZX": {
+      "file": "xychartDiagram-7b46ecfd-572KILZX.js"
+    },
+    "requirementDiagram-e882bd67-TDTEANF7": {
+      "file": "requirementDiagram-e882bd67-TDTEANF7.js"
+    },
+    "sequenceDiagram-1767341c-5YGGENWS": {
+      "file": "sequenceDiagram-1767341c-5YGGENWS.js"
+    },
+    "classDiagram-3275847a-TWHNOE7U": {
+      "file": "classDiagram-3275847a-TWHNOE7U.js"
+    },
+    "classDiagram-v2-2ed0a7d3-IYPRQDTK": {
+      "file": "classDiagram-v2-2ed0a7d3-IYPRQDTK.js"
+    },
+    "chunk-NKGOMDWV": {
+      "file": "chunk-NKGOMDWV.js"
+    },
+    "stateDiagram-d2e6f24f-3NYU6XQD": {
+      "file": "stateDiagram-d2e6f24f-3NYU6XQD.js"
+    },
+    "stateDiagram-v2-21d485ae-6TB52QRY": {
+      "file": "stateDiagram-v2-21d485ae-6TB52QRY.js"
+    },
+    "chunk-ZHJ3CGNH": {
+      "file": "chunk-ZHJ3CGNH.js"
+    },
+    "c4Diagram-e2511a7a-2F33OKJD": {
+      "file": "c4Diagram-e2511a7a-2F33OKJD.js"
+    },
+    "chunk-5I2OHLAP": {
+      "file": "chunk-5I2OHLAP.js"
+    },
+    "flowDiagram-e44a2353-GR4XSO6F": {
+      "file": "flowDiagram-e44a2353-GR4XSO6F.js"
+    },
+    "flowDiagram-v2-a8396bb5-VPWBZQUG": {
+      "file": "flowDiagram-v2-a8396bb5-VPWBZQUG.js"
+    },
+    "chunk-WAVEGCM2": {
+      "file": "chunk-WAVEGCM2.js"
+    },
+    "chunk-DK5LTWVP": {
+      "file": "chunk-DK5LTWVP.js"
+    },
+    "chunk-KG3DDNBD": {
+      "file": "chunk-KG3DDNBD.js"
+    },
+    "chunk-7NR6Z2SW": {
+      "file": "chunk-7NR6Z2SW.js"
+    },
+    "chunk-EWHW7MUL": {
+      "file": "chunk-EWHW7MUL.js"
+    },
+    "chunk-PRETMUSG": {
+      "file": "chunk-PRETMUSG.js"
+    },
+    "chunk-PWVEJSRK": {
+      "file": "chunk-PWVEJSRK.js"
+    },
+    "erDiagram-582bd92f-5ZJGSTYX": {
+      "file": "erDiagram-582bd92f-5ZJGSTYX.js"
+    },
+    "chunk-YN77UDVN": {
+      "file": "chunk-YN77UDVN.js"
+    },
+    "chunk-OUWEDHNM": {
+      "file": "chunk-OUWEDHNM.js"
+    },
+    "chunk-EWO67WO4": {
+      "file": "chunk-EWO67WO4.js"
+    },
+    "gitGraphDiagram-d5d647e9-Q6TGYIEO": {
+      "file": "gitGraphDiagram-d5d647e9-Q6TGYIEO.js"
+    },
+    "ganttDiagram-05e48839-WNHQQLVL": {
+      "file": "ganttDiagram-05e48839-WNHQQLVL.js"
+    },
+    "chunk-7UYIS6C4": {
+      "file": "chunk-7UYIS6C4.js"
+    },
+    "infoDiagram-00deb277-YVX33TGQ": {
+      "file": "infoDiagram-00deb277-YVX33TGQ.js"
+    },
+    "pieDiagram-35c7eafc-XKUL4GBX": {
+      "file": "pieDiagram-35c7eafc-XKUL4GBX.js"
+    },
+    "chunk-XOYNEW5T": {
+      "file": "chunk-XOYNEW5T.js"
+    },
+    "chunk-VL6IR44K": {
+      "file": "chunk-VL6IR44K.js"
+    },
+    "chunk-X3LYIV2D": {
+      "file": "chunk-X3LYIV2D.js"
+    },
+    "chunk-GEMPHCCH": {
+      "file": "chunk-GEMPHCCH.js"
+    },
+    "chunk-VMCTCRII": {
+      "file": "chunk-VMCTCRII.js"
+    },
+    "chunk-VGLZHYFN": {
+      "file": "chunk-VGLZHYFN.js"
+    },
+    "chunk-LTLIOABT": {
+      "file": "chunk-LTLIOABT.js"
+    },
+    "chunk-XAJFQPCJ": {
+      "file": "chunk-XAJFQPCJ.js"
+    },
+    "katex-ffb0e8f1-TX7IKZWC": {
+      "file": "katex-ffb0e8f1-TX7IKZWC.js"
+    },
+    "chunk-ZS7NZCD4": {
+      "file": "chunk-ZS7NZCD4.js"
     }
   }
 }

@@ -1,36 +1,15 @@
 ---
 layout: home
-
-title: T-ui-plus
-# titleTemplate: 选项卡描述
-editLink: true
-lastUpdated: true
-hero:
-  name: T-ui-plus
-  text: vue3基础组件
-  tagline: Vue3 中基于Element-plus二次封装基础组件文档
-  image:
-    src: /img/wocwin.jpg
-    alt: t-ui-plus
-  actions:
-    - theme: brand
-      text: 安装指南
-      link: /components/
-    - theme: brand
-      text: 组件预览
-      link: /components/TSelect/base.md
-features:
-  - icon: 🔨
-    title: 实际项目
-    details: 实际项目中碰到的疑点、难点，致力于更优的自我。。
-  - icon: 🧩
-    title: 基础组件
-    details: 基于Element-plus二次封装；使用组件 Demo 快速体验交互细节。。
-  - icon: ✈️
-    title: Vue驱动。
-    details: 享受 Vue3 + vite3 的开发体验，在 Markdown 中使用 Vue 组件，同时可以使用 Vue 来开发自定义主题。
+# 首页部分元素定制
+blog:
+ name: '高木木@gl'
+ motto: '学无止境'
+ inspiring:
+  - 千万不要因为走得太久，而忘记了我们为什么出发
+  - 人生就像一场修行，你不可能一开始就修成正果
+  - 无论多么沉重的负担，也不要忘记微笑；无论多么漫长的路程，也不要忘记坚持
+  - 生活的真谛不在繁华，而在于淡泊
+ # 设置 inspiringTimeout 可以实现自动切换
+ inspiringTimeout: 3000
+ pageSize: 6
 ---
-<VueDragResize></VueDragResize>
-
-
-

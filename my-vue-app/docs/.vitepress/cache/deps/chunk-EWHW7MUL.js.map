@@ -1,0 +1,7 @@
+{
+  "version": 3,
+  "sources": ["../../../../node_modules/.pnpm/mermaid@10.9.0/node_modules/mermaid/dist/clone-d2e37f8c.js"],
+  "sourcesContent": ["import { c as baseClone } from \"./graph-af3d5df6.js\";\nvar CLONE_SYMBOLS_FLAG = 4;\nfunction clone(value) {\n  return baseClone(value, CLONE_SYMBOLS_FLAG);\n}\nexport {\n  clone as c\n};\n"],
+  "mappings": ";;;;;AACA,IAAI,qBAAqB;AACzB,SAAS,MAAM,OAAO;AACpB,SAAO,UAAU,OAAO,kBAAkB;AAC5C;",
+  "names": []
+}
