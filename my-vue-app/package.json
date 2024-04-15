@@ -11,9 +11,15 @@
     "docs:build": "vitepress build docs"
   },
   "dependencies": {
+    "@vue-macros/volar": "^0.18.18",
+    "dayjs": "^1.11.10",
+    "sass": "^1.75.0",
+    "sass-loader": "^14.2.0",
     "unplugin-auto-import": "^0.17.5",
     "unplugin-vue-components": "^0.26.0",
-    "vue": "^3.4.21"
+    "unplugin-vue-macros": "^2.9.1",
+    "vue": "^3.4.21",
+    "vue-drag-resize": "^1.5.4"
   },
   "devDependencies": {
     "@arco-design/web-vue": "^2.55.1",
@@ -21,7 +27,6 @@
     "typescript": "^5.2.2",
     "vite": "^5.2.0",
     "vitepress": "^1.1.0",
-    "vitepress-theme-demoblock": "^3.0.7",
     "vue-tsc": "^2.0.6"
   }
 }

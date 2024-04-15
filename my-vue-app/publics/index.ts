@@ -1,7 +1,9 @@
-const components = [];
+import { ref } from "vue";
+
+const components = ref<any>([]);
 
 const installComponents = (app: any) => {
-  components.forEach((comp: any) => {
+  components.value.forEach((comp: any) => {
     app.component(comp.name as string, comp);
   });
 };
