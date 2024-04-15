@@ -12,11 +12,16 @@
   "dependencies": {
     "@element-plus/icons-vue": "^2.3.1",
     "@sugarat/theme": "^0.2.27",
+    "@vitejs/plugin-vue": "^5.0.4",
     "echarts": "^5.5.0",
     "echarts-liquidfill": "^3.1.0",
     "element-plus": "^2.5.3",
+    "unplugin-auto-import": "^0.17.5",
+    "unplugin-vue-components": "^0.26.0",
+    "vite": "^5.2.8",
     "vue": "3.4.21",
-    "vue-drag-resize": "^1.5.4"
+    "vue-drag-resize": "^1.5.4",
+    "vue-tsc": "^2.0.13"
   },
   "directories": {
     "doc": "docs"

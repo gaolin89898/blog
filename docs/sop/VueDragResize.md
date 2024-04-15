@@ -17,9 +17,7 @@ $ npm i -s vue-drag-resize
 
 ```
 
-## Docs
 
-<VueDragResize></VueDragResize>
 
 ## 引入
 
@@ -31,6 +29,14 @@ import VueDragResize from "vue-drag-resize";
 
 Vue.component("vue-drag-resize", VueDragResize);
 ```
+
+## Docs
+
+<script lang="ts" setup>
+  import VueDragResize from '../../src/components/VueDragResize/index.vue'
+</script>
+
+<VueDragResize></VueDragResize>
 
 ##### 组件内引入
 
