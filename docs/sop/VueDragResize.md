@@ -30,7 +30,7 @@ import VueDragResize from "vue-drag-resize";
 Vue.component("vue-drag-resize", VueDragResize);
 ```
 
-## Docs
+##### Docs
 
 <script lang="ts" setup>
   import VueDragResize from '../../src/components/VueDragResize/index.vue'
@@ -38,7 +38,7 @@ Vue.component("vue-drag-resize", VueDragResize);
 
 <VueDragResize></VueDragResize>
 
-##### 组件内引入
+<!-- ##### 组件内引入
 
 ```vue
 <div id="app">
@@ -80,7 +80,7 @@ export default {
     },
   },
 };
-```
+``` -->
 
 ## API
 
@@ -109,7 +109,7 @@ export default {
 | y                     | 组件初始 y 位置                                                                                                 | number        | 0                                                |
 | z                     | 组件的 zindex 层级                                                                                              | number,string | 'auto'                                           |
 | stickSize             | 棍棒尺寸                                                                                                        | number        | 8                                                |
-| stickSize             | 定义句柄数组以限制元素大小调整                                                                                  | sting[]       | ['tl', 'tm', 'tr', 'mr', 'br', 'bm', 'bl', 'ml'] |
+| sticks            | 定义句柄数组以限制元素大小调整                                                                                  | sting[]       | ['tl', 'tm', 'tr', 'mr', 'br', 'bm', 'bl', 'ml'] |
 | axis                  | 定义元素可拖动的轴。 可用值为 x，y，both 或 none                                                                | string        | both                                             |
 | dragHandle            | 用于拖动组件的选择器                                                                                            | string        | ''                                               |
 | dragCancel            | 用于防止拖动初始化的选择器                                                                                      | string        | ''                                               |
