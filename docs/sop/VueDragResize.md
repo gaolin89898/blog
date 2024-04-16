@@ -30,7 +30,7 @@ import VueDragResize from "vue-drag-resize";
 Vue.component("vue-drag-resize", VueDragResize);
 ```
 
-##### Docs
+##### Dome
 
 <script lang="ts" setup>
   import VueDragResize from '../../src/components/VueDragResize/index.vue'

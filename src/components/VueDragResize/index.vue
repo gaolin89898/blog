@@ -1,289 +1,91 @@
 <template>
   <div style="width: 100%; height: 500px; margin-top: 20px">
     <a-row>
-      <a-col :span="12">
-        <template v-for="item in form">
-          <a-form
-            :model="item"
-            :label-col-props="{ span: 12 }"
-            :wrapper-col-props="{ span: 12 }"
-            label-align="left"
-            v-if="item.isActive == '0'"
-          >
-            <a-scrollbar
-              style="width: 100%; height: 500px; overflow: auto"
-              type="track"
+      <a-col :span="5">
+        <a-form :model="form" layout="vertical">
+          <a-form-item label="位置" tooltip="组件初始 x，y 位置">
+            <div
+              style="width: 100%; display: flex; justify-content: space-between"
             >
-              <a-form-item
-                label="isActive"
-                label-col-flex="80px"
-                tooltip="确定组件是否应处于活动状态"
-              >
-                <a-radio-group v-model:modelValue="item.isActive">
-                  <a-radio value="0">是</a-radio>
-                  <a-radio value="1">否</a-radio>
-                </a-radio-group>
-              </a-form-item>
-              <a-form-item
-                label="preventActiveBehavior"
-                label-col-flex="170px"
-                tooltip="通过单击组件并单击组件区域外部来禁用组件的行为。"
-              >
-                <a-radio-group v-model:modelValue="item.preventActiveBehavior">
-                  <a-radio value="0">是</a-radio>
-                  <a-radio value="1">否</a-radio>
-                </a-radio-group>
-              </a-form-item>
-              <a-form-item
-                label="parentW"
-                label-col-flex="80px"
-                tooltip="定义父元素的初始宽度。 如果未指定，则自动计算。"
-              >
+              <div style="width: 48%">
+                <span style="font-size: 10px">top(x)</span>
+                <a-input-number v-model="form.x" hide-button></a-input-number>
+              </div>
+              <div style="width: 48%">
+                <span style="font-size: 10px">left(y)</span>
+                <a-input-number v-model="form.y" hide-button></a-input-number>
+              </div>
+            </div>
+          </a-form-item>
+          <a-form-item label="大小" tooltip="组件初始 w，h 大小">
+            <div
+              style="width: 100%; display: flex; justify-content: space-between"
+            >
+              <div style="width: 48%">
+                <span style="font-size: 10px">w</span>
+                <a-input-number v-model="form.w" hide-button></a-input-number>
+              </div>
+              <div style="width: 48%">
+                <span style="font-size: 10px">h</span>
+                <a-input-number v-model="form.h" hide-button></a-input-number>
+              </div>
+            </div>
+          </a-form-item>
+          <a-form-item label="最小大小" tooltip="最小宽度，最小高度">
+            <div
+              style="width: 100%; display: flex; justify-content: space-between"
+            >
+              <div style="width: 48%">
+                <span style="font-size: 10px">minw</span>
                 <a-input-number
-                  v-model="item.parentW"
+                  v-model="form.minw"
                   hide-button
                 ></a-input-number>
-              </a-form-item>
-              <a-form-item
-                label="parentH"
-                label-col-flex="80px"
-                tooltip="定义父元素的初始高度。 如果未指定，则自动计算"
-              >
+              </div>
+              <div style="width: 48%">
+                <span style="font-size: 10px">minh</span>
                 <a-input-number
-                  v-model="item.parentH"
+                  v-model="form.minh"
                   hide-button
                 ></a-input-number>
-              </a-form-item>
-              <a-form-item
-                label="parentScaleX"
-                label-col-flex="110px"
-                tooltip="定义初始水平比例或父元素"
-              >
-                <a-input-number
-                  v-model="item.parentScaleX"
-                  hide-button
-                ></a-input-number>
-              </a-form-item>
-              <a-form-item
-                label=" parentScaleY "
-                label-col-flex="110px"
-                tooltip="定义初始垂直比例或父元素。"
-              >
-                <a-input-number
-                  v-model="item.parentScaleY"
-                  hide-button
-                ></a-input-number>
-              </a-form-item>
-              <a-form-item
-                label="isDraggable"
-                label-col-flex="100px"
-                tooltip="确定组件是否应可拖动"
-              >
-                <a-radio-group v-model:modelValue="item.isDraggable">
-                  <a-radio value="0">是</a-radio>
-                  <a-radio value="1">否</a-radio>
-                </a-radio-group>
-              </a-form-item>
-              <a-form-item
-                label="isResizable"
-                label-col-flex="100px"
-                tooltip="确定组件是否应调整大小"
-              >
-                <a-radio-group v-model:modelValue="item.isResizable">
-                  <a-radio value="0">是</a-radio>
-                  <a-radio value="1">否</a-radio>
-                </a-radio-group>
-              </a-form-item>
-              <a-form-item
-                label="parentLimitation"
-                label-col-flex="130px"
-                tooltip="范围限制为其父大小"
-              >
-                <a-radio-group v-model:modelValue="item.parentLimitation">
-                  <a-radio value="0">是</a-radio>
-                  <a-radio value="1">否</a-radio>
-                </a-radio-group>
-              </a-form-item>
-              <a-form-item
-                label="snapToGrid"
-                label-col-flex="100px"
-                tooltip="确定组件是否应按预定义的步骤移动和调整大小"
-              >
-                <a-radio-group v-model:modelValue="item.snapToGrid">
-                  <a-radio value="0">是</a-radio>
-                  <a-radio value="1">否</a-radio>
-                </a-radio-group>
-              </a-form-item>
-              <a-form-item
-                label="gridX"
-                label-col-flex="60px"
-                tooltip="定义水平轴的网格步长。"
-              >
-                <a-input-number
-                  v-model="item.gridX"
-                  hide-button
-                ></a-input-number>
-              </a-form-item>
-              <a-form-item
-                label="gridY"
-                label-col-flex="60px"
-                tooltip="定义垂直轴的网格步长。"
-              >
-                <a-input-number
-                  v-model="item.gridY"
-                  hide-button
-                ></a-input-number>
-              </a-form-item>
-              <a-form-item
-                label="aspectRatio"
-                label-col-flex="100px"
-                tooltip="确定组件是否应保留其比例"
-              >
-                <a-radio-group v-model:modelValue="item.aspectRatio">
-                  <a-radio value="0">是</a-radio>
-                  <a-radio value="1">否</a-radio>
-                </a-radio-group>
-              </a-form-item>
-              <a-form-item
-                label="w"
-                label-col-flex="50px"
-                tooltip="定义组件的初始宽度"
-              >
-                <a-input-number v-model="item.w" hide-button></a-input-number>
-              </a-form-item>
-              <a-form-item
-                label="h"
-                label-col-flex="50px"
-                tooltip="定义组件的初始高度"
-              >
-                <a-input-number v-model="item.h" hide-button></a-input-number>
-              </a-form-item>
-              <a-form-item
-                label="minw"
-                label-col-flex="60px"
-                tooltip="最小宽度"
-              >
-                <a-input-number
-                  v-model="item.minw"
-                  hide-button
-                ></a-input-number>
-              </a-form-item>
-              <a-form-item
-                label="minh"
-                label-col-flex="60px"
-                tooltip="最小高度"
-              >
-                <a-input-number
-                  v-model="item.minh"
-                  hide-button
-                ></a-input-number>
-              </a-form-item>
-              <a-form-item
-                label="x"
-                label-col-flex="50px"
-                tooltip="组件初始 x 位置"
-              >
-                <a-input-number v-model="item.x" hide-button></a-input-number>
-              </a-form-item>
-              <a-form-item
-                label="y"
-                label-col-flex="50px"
-                tooltip="组件初始 y 位置"
-              >
-                <a-input-number v-model="item.y" hide-button></a-input-number>
-              </a-form-item>
-              <a-form-item
-                label="z"
-                label-col-flex="50px"
-                tooltip="组件初始 z 位置"
-              >
-                <a-input-number v-model="item.z" hide-button></a-input-number>
-              </a-form-item>
-              <a-form-item
-                label="stickSize"
-                label-col-flex="80px"
-                tooltip="棍棒尺寸"
-              >
-                <a-input-number
-                  v-model="item.stickSize"
-                  hide-button
-                ></a-input-number>
-              </a-form-item>
-              <a-form-item
-                label="sticks"
-                label-col-flex="60px"
-                tooltip="定义句柄数组以限制元素大小调整"
-              >
-                <a-select v-model="item.sticks" multiple>
-                  <a-option>tl</a-option>
-                  <a-option>tr</a-option>
-                  <a-option>tm</a-option>
-                  <a-option>mr</a-option>
-                  <a-option>br</a-option>
-                  <a-option>bm</a-option>
-                  <a-option>bl</a-option>
-                  <a-option>ml</a-option>
-                </a-select>
-              </a-form-item>
-              <a-form-item
-                label="axis"
-                label-col-flex="60px"
-                tooltip="定义元素可拖动的轴。"
-              >
-                <a-input v-model="item.axis"></a-input>
-              </a-form-item>
-              <a-form-item
-                label="dragHandle"
-                label-col-flex="100px"
-                tooltip="用于拖动组件的选择器"
-              >
-                <a-input v-model="item.axis"></a-input>
-              </a-form-item>
-              <a-form-item
-                label="dragCancel"
-                label-col-flex="100px"
-                tooltip="用于防止拖动初始化的选择器"
-              >
-                <a-input v-model="item.axis"></a-input>
-              </a-form-item>
-              <a-form-item
-                label="contentClass"
-                label-col-flex="110px"
-                tooltip="定义一个类，应用于带有 vdr 类的 div"
-              >
-                <a-input v-model="item.axis"></a-input>
-              </a-form-item>
-            </a-scrollbar>
-          </a-form>
-        </template>
+              </div>
+            </div>
+          </a-form-item>
+          <a-form-item label="配置" :content-flex="false">
+            <a-checkbox v-model="form.isResizable">isResizable</a-checkbox>
+            <a-checkbox v-model="form.isDraggable">isDraggable</a-checkbox>
+            <a-checkbox v-model="form.snapToGrid">snapToGrid</a-checkbox>
+            <a-checkbox v-model="form.parentLimitation"
+              >parentLimitation</a-checkbox
+            >
+          </a-form-item>
+        </a-form>
       </a-col>
-      <a-col :span="10" :offset="1">
+      <a-col :span="18" :offset="1">
         <div style="position: relative; width: 100%; height: 100%">
           <VueDragResize
-            v-for="item in form"
-            :isActive="item.isActive == '0' ? true : false"
+            v-for="(item, index) in data"
+            :isActive="item.isActive"
             :w="item.w"
             :h="item.h"
-            :parentH="item.parentH"
-            :isDraggable="item.isDraggable == '0' ? true : false"
-            :isResizable="item.isResizable == '0' ? true : false"
-            :parentLimitation="item.parentLimitation == '0' ? true : false"
-            :gridX="item.gridX"
-            :gridY="item.gridY"
+            :parentH="500"
+            :isDraggable="item.isDraggable"
+            :isResizable="item.isResizable"
+            :parentLimitation="item.parentLimitation"
             :x="item.x"
             :y="item.y"
             :z="item.z"
+            :minw="item.minw"
+            :minh="item.minh"
             :sticks="item.sticks"
-            @resizing="resize"
-            @dragging="resize"
+            @resizing="(newRect) => resize(newRect, item)"
+            @dragging="(newRect) => resize(newRect, item)"
             :style="{
               position: 'absolute',
               background: `${item.color}`,
             }"
+            @activated="activated(item, index)"
           >
-            <!-- <h3>Hello World!</h3>
-      <p>{{ top }} х {{ left }}</p>
-      <p>{{ width }} х {{ height }}</p> -->
           </VueDragResize>
         </div>
       </a-col>
@@ -300,82 +102,106 @@ import {
   Checkbox as ACheckbox,
   Form as AForm,
   FormItem as AFormItem,
-  Input as AInput,
-  Radio as ARadio,
-  Scrollbar as AScrollbar,
-  RadioGroup as ARadioGroup,
   InputNumber as AInputNumber,
-  Select as ASelect,
-  Option as AOption,
 } from "@arco-design/web-vue";
 import "@arco-design/web-vue/dist/arco.css";
 
-const form = ref([
+const form = ref<{
+  isActive?: boolean;
+  isDraggable?: boolean;
+  isResizable?: boolean;
+  parentLimitation?: boolean;
+  snapToGrid?: boolean;
+  w?: number;
+  h?: number;
+  minw?: number;
+  minh?: number;
+  x?: number;
+  y?: number;
+  z?: number;
+  sticks?: string[];
+  color?: string;
+}>({});
+
+const data = ref([
   {
-    isActive: "0",
-    preventActiveBehavior: "1",
-    parentW: 0,
-    parentH: 500,
-    parentScaleX: 1,
-    parentScaleY: 1,
-    isDraggable: "0",
-    isResizable: "0",
-    parentLimitation: "0",
-    snapToGrid: "1",
-    gridX: 50,
-    gridY: 50,
-    aspectRatio: "1",
+    isActive: false,
+    isDraggable: true,
+    isResizable: true,
+    parentLimitation: true,
+    snapToGrid: false,
     w: 80,
     h: 80,
     minw: 30,
     minh: 30,
     x: 0,
     y: 0,
-    z: 3,
-    stickSize: 8,
+    z: 1,
     sticks: [],
-    axis: "",
-    color: "green",
+    color: "rgb(239, 154, 154)",
   },
   {
-    isActive: "1",
-    preventActiveBehavior: "1",
-    parentW: 0,
-    parentH: 500,
-    parentScaleX: 1,
-    parentScaleY: 1,
-    isDraggable: "0",
-    isResizable: "1",
-    parentLimitation: "0",
-    snapToGrid: "1",
-    gridX: 80,
-    gridY: 80,
-    aspectRatio: "1",
+    isActive: false,
+    isDraggable: true,
+    isResizable: true,
+    parentLimitation: true,
+    snapToGrid: false,
     w: 80,
     h: 80,
     minw: 30,
     minh: 30,
-    x: 70,
-    y: 70,
-    z: 2,
-    stickSize: 8,
+    x: 90,
+    y: 0,
+    z: 1,
     sticks: [],
-    axis: "",
-    color: "red",
+    color: "rgb(174, 213, 129)",
+  },
+  {
+    isActive: false,
+    isDraggable: true,
+    isResizable: true,
+    parentLimitation: true,
+    snapToGrid: false,
+    w: 80,
+    h: 80,
+    minw: 30,
+    minh: 30,
+    x: 0,
+    y: 90,
+    z: 1,
+    sticks: [],
+    color: "rgb(129, 212, 250)",
   },
 ]);
 
-const top = ref(0);
-const left = ref(0);
-const width = ref(0);
-const height = ref(0);
+const resize = (newRect, item) => {
+  form.value.w = newRect.width;
+  form.value.h = newRect.height;
+  form.value.x = newRect.top;
+  form.value.y = newRect.left;
 
-const resize = (newRect) => {
-  width.value = newRect.width;
-  height.value = newRect.height;
-  top.value = newRect.top;
-  left.value = newRect.left;
+  item.w = newRect.width;
+  item.h = newRect.height;
+  item.x = newRect.top;
+  item.y = newRect.left;
 };
+
+const activated = (item, index) => {
+  activateItem(item,index);
+};
+
+function activateItem(item,index) {
+  data.value.forEach((v, i) => {
+    if (i == index) {
+      v.isActive = true;
+      v.sticks = ["tl", "tm", "tr", "mr", "br", "bm", "bl", "ml"];
+      form.value = item
+    } else {
+      v.isActive = false;
+      v.sticks = [];
+    }
+  });
+}
 </script>
 
 <style>
