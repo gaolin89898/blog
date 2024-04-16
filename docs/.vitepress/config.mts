@@ -1,5 +1,9 @@
 import { defineConfig } from "vitepress";
 import { blogTheme } from "./blog-theme";
+import {
+  containerPreview,
+  componentPreview,
+} from "@vitepress-demo-preview/plugin";
 
 export default defineConfig({
   extends: blogTheme,
@@ -46,5 +50,11 @@ export default defineConfig({
         link: "https://github.com/gaolin89898/blog",
       },
     ],
+  },
+  markdown: {
+    config(md) {
+      md.use(containerPreview);
+      md.use(componentPreview);
+    },
   },
 });
