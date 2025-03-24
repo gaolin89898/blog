@@ -8,8 +8,6 @@ sticky: 1
 
 [Github:https://github.com/kirillmurashov/vue-drag-resize](https://github.com/kirillmurashov/vue-drag-resize)
 
-![图片](http://picturebed.gaolin.online/blog/Vue-Drag-Resize/image.gif)
-
 ## 安装
 
 ```sh
@@ -29,59 +27,6 @@ Vue.component("vue-drag-resize", VueDragResize);
 ```
 
 ##### Dome
-
-<!-- <script lang="ts" setup>
-  // import VueDragResize from '../publics/VueDragResize/index.vue'
-</script> -->
-
-<!-- <preview path="../publics/VueDragResize/index.vue"></preview> -->
-<!-- <VueDragResize></VueDragResize> -->
-
-<iframe src="https://cn.vitejs.dev/guide/" frameborder="0" style="width:100%;height:500px" scrolling="no"></iframe>
-
-<!-- ##### 组件内引入
-
-```vue
-<div id="app">
-  <VueDragResize
-    :isActive="true"
-    :w="200"
-    :h="200"
-    v-on:resizing="resize"
-    v-on:dragging="resize"
-  >
-    <h3>Hello World!</h3>
-    <p>{{ top }} х {{ left }}</p>
-    <p>{{ width }} х {{ height }}</p>
-  </VueDragResize>
-</div>
-```
-
-```js
-import VueDragResize from "vue-drag-resize";
-export default {
-  name: "app",
-  components: {
-    VueDragResize,
-  },
-  data() {
-    return {
-      width: 0,
-      height: 0,
-      top: 0,
-      left: 0,
-    };
-  },
-  methods: {
-    resize(newRect) {
-      this.width = newRect.width;
-      this.height = newRect.height;
-      this.top = newRect.top;
-      this.left = newRect.left;
-    },
-  },
-};
-``` -->
 
 ## API
 

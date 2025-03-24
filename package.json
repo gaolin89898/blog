@@ -17,7 +17,6 @@
     "element-plus": "^2.5.3",
     "vite": "^5.2.8",
     "vue": "3.4.21",
-    "vue-drag-resize": "^1.5.4",
     "vue-tsc": "^2.0.13"
   },
   "directories": {
