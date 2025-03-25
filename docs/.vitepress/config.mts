@@ -43,6 +43,10 @@ export default defineConfig({
         text: "工具配置",
         items: [{ text: "oh-my-posh", link: "/sop/OnMyPosh.md" }],
       },
+      {
+        text: "css",
+        items: [{ text: "动画", link: "/css/animations/animations.md" }],
+      },
     ],
     socialLinks: [
       {
