@@ -1,6 +1,4 @@
-# 边框动画
-
-### 边框-彩虹框
+# 边框-彩虹框
 
 <div class="rainbow-glow">
   <div class="card">
@@ -9,7 +7,7 @@
 </div>
 
 <script>
-  import "./index.css";
+  import './index.css'
 </script>
 
 ```html
@@ -23,7 +21,7 @@
 ```css
 .rainbow-glow {
   display: inline-block;
-  padding: 2px;
+  margin: 20px;
   position: relative;
   border-radius: 25px;
   &:before {
