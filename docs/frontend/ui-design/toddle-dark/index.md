@@ -1,0 +1,329 @@
+# 好看的 开关
+
+## 内容
+
+#### 切换黑暗
+
+<div class="dark">
+  <input type="checkbox" role="switch" class="dark-2" />
+</div>
+
+<script>
+import './index.css'
+</script>
+
+```html
+<div class="dark">
+  <input type="checkbox" role="switch" class="dark-2" />
+</div>
+```
+
+```css
+.dark {
+  display: grid;
+  place-items: center;
+  margin: 40px 0;
+  width: 400px;
+  height: 200px;
+  font-size: 15vmin;
+  transition: background 0.4s;
+}
+
+@property --x {
+  syntax: "<percentage>";
+  inherits: true;
+  initial-value: 35%;
+}
+
+@property --c1 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #00002e;
+}
+
+@property --c2 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #593d92;
+}
+
+@property --c3 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #ddf;
+}
+
+@property --c4 {
+  syntax: "<color>";
+  inherits: true;
+  initial-value: #593d92;
+}
+
+@property --x1 {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 0px;
+}
+
+@property --x2 {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 0px;
+}
+
+@property --x3 {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 0px;
+}
+
+@property --x4 {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 0px;
+}
+
+@keyframes moveStar1 {
+  0% {
+    --x1: 0em;
+  }
+  100% {
+    --x1: 2em;
+  }
+}
+
+@keyframes moveStar2 {
+  0% {
+    --x2: 0em;
+  }
+  100% {
+    --x2: 2em;
+  }
+}
+
+@keyframes moveStar3 {
+  0% {
+    --x3: 0em;
+  }
+  100% {
+    --x3: 2em;
+  }
+}
+
+@keyframes moveStar4 {
+  0% {
+    --x4: 0em;
+  }
+  100% {
+    --x4: 2em;
+  }
+}
+
+.dark-2 {
+  --c1: #00002e;
+  --c2: #593d92;
+  --c3: #ddfd;
+  --c4: #593d9255;
+  --x: 35%;
+  --x1: 1.5em;
+  --x2: 1.5em;
+  --x3: 1.5em;
+  --x4: 1.5em;
+  appearance: none;
+  position: relative;
+  font-size: 1em;
+  height: 100%;
+  width: 100%;
+  aspect-ratio: 2;
+  -webkit-aspect-ratio: 2;
+  box-sizing: content-box;
+  border-radius: 1em;
+  background-image: linear-gradient(var(--c1), #0000 85%);
+  background-clip: border-box;
+  background-color: #1a0e99;
+  overflow: hidden;
+  transition: background-color 0.3s, --x 0.3s, --c1 0.3s, --c2 0.3s, --c3 0.2s, --c4
+      0.2s;
+
+  &::before {
+    content: "";
+    inset: 0;
+    position: absolute;
+    background: conic-gradient(
+          at 96% calc(100% - 0.1em),
+          #0000 150deg,
+          #dde 0 210deg,
+          #0000 0
+        ) var(--x1) 0.5em / 100% 100%, conic-gradient(
+          at 96% 0.1em,
+          #dde 30deg,
+          #0000 0 330deg,
+          #dde 0
+        ) var(--x1) 0.43em / 100% 100%,
+      conic-gradient(
+          at 96% calc(100% - 0.06em),
+          #0000 150deg,
+          #dde 0 210deg,
+          #0000 0
+        ) var(--x2) 0.25em / 100% 100%, conic-gradient(
+          at 96% 0.06em,
+          #dde 30deg,
+          #0000 0 330deg,
+          #dde 0
+        ) var(--x2) 0.21em / 100% 100%,
+      conic-gradient(
+          at 96% calc(100% - 0.06em),
+          #0000 150deg,
+          #dde 0 210deg,
+          #0000 0
+        ) var(--x3) 0.85em / 100% 100%, conic-gradient(
+          at 96% 0.06em,
+          #dde 30deg,
+          #0000 0 330deg,
+          #dde 0
+        ) var(--x3) 0.81em / 100% 100%,
+      conic-gradient(
+          at 96% calc(100% - 0.075em),
+          #0000 150deg,
+          #dde 0 210deg,
+          #0000 0
+        ) var(--x4) 0.65em / 100% 100%, conic-gradient(
+          at 96% 0.075em,
+          #dde 30deg,
+          #0000 0 330deg,
+          #dde 0
+        ) var(--x4) 0.6em / 100% 100%;
+    animation: moveStar1 4.75s -3s linear infinite, moveStar2 5.5s -1.75s linear
+        infinite, moveStar3 5s -4.17s linear infinite, moveStar4 5.25s -2.5s
+        linear infinite;
+    filter: drop-shadow(0 0 0.05em #fff);
+    pointer-events: none;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    height: 80%;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 1px solid #0000;
+    left: 0.5em;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    background-image: radial-gradient(
+        circle at 25% 45%,
+        var(--c3) 0.05em,
+        #0000 0
+      ), radial-gradient(circle at 24% 44%, var(--c4) 0.05em, #0000 0),
+      radial-gradient(circle at 55% 25%, var(--c3) 0.075em, #0000 0),
+      radial-gradient(circle at 54% 24%, var(--c4) 0.075em, #0000 0),
+      radial-gradient(circle at 65% 85%, var(--c4) 0.065em, #0000 0),
+      radial-gradient(circle at 64% 84%, var(--c4) 0.063em, #0000 0),
+      radial-gradient(circle at 75% 75%, var(--c4) 0.025em, #0000 0),
+      radial-gradient(circle at 74% 74%, var(--c4) 0.023em, #0000 0),
+      radial-gradient(circle at 97% 51%, var(--c4) 0.075em, #0000 0),
+      radial-gradient(circle at 96% 50%, var(--c4) 0.073em, #0000 0),
+      radial-gradient(at var(--x) 30%, #0000 10%, var(--c2) 80%);
+    background-clip: padding-box;
+    background-repeat: no-repeat;
+    background-color: #ddf;
+    z-index: 1;
+    box-shadow: 0 0 0.2em 0.0125em #fff8;
+    transition: box-shadow 0.5s, background-color 0.3s, left 0.3s;
+    pointer-events: none;
+  }
+
+  &:checked {
+    --c1: #ff3300;
+    --c2: #ffcea1;
+    --c3: #ddf0;
+    --c4: #593d9200;
+    --x: 65%;
+    background-color: #ff993c;
+
+    &::after {
+      background-color: #fee;
+      left: calc(100% - 0.5em);
+      box-shadow: 0 0 0.2em 0.0125em #fffc;
+    }
+
+    &::before {
+      background: radial-gradient(
+            at calc(100% - 0.2em) 100%,
+            #fff 0.2em,
+            #0000 0
+          ) var(--x1) 0.5em / 100% 100%, radial-gradient(
+            20% 60% at calc(100% - 0.15em) 100%,
+            #fff 30%,
+            #0000 0
+          ) var(--x1) 0.5em / 100% 100%,
+        radial-gradient(at calc(100% - 0.2em) 100%, #fff 0.2em, #0000 0) var(
+            --x2
+          )
+          0.21em / 100% 100%, radial-gradient(
+            20% 60% at calc(100% - 0.15em) 100%,
+            #fff 30%,
+            #0000 0
+          ) var(--x2) 0.21em / 100% 100%,
+        radial-gradient(20% 50% at calc(100% - 0.22em) 100%, #fff 30%, #0000 0) var(
+            --x2
+          )
+          0.21em / 100% 100%, radial-gradient(
+            at calc(100% - 0.3em) 100%,
+            #fff 0.2em,
+            #0000 0
+          ) var(--x3) 0.81em / 100% 100%,
+        radial-gradient(20% 60% at calc(100% - 0.25em) 100%, #fff 30%, #0000 0) var(
+            --x3
+          )
+          0.81em / 100% 100%, radial-gradient(
+            20% 45% at calc(100% - 0.2em) 100%,
+            #fff 30%,
+            #0000 0
+          ) var(--x3) 0.81em / 100% 100%,
+        radial-gradient(at calc(100% - 0.2em) 100%, #fff 0.2em, #0000 0) var(
+            --x4
+          )
+          0.6em / 100% 100%, radial-gradient(
+            20% 60% at calc(100% - 0.15em) 100%,
+            #fff 30%,
+            #0000 0
+          ) var(--x4) 0.6em / 100% 100%;
+      opacity: 0.8;
+      z-index: 2;
+    }
+  }
+
+  &[disabled] {
+    opacity: 0.5;
+    &,
+    &::before,
+    &::after {
+      animation-play-state: paused !important;
+      transition-duration: 0s !important;
+    }
+  }
+}
+
+@media (prefers-reduced-motion) {
+  .dark-2 {
+    &,
+    &::before,
+    &::after {
+      animation-play-state: paused !important;
+      transition-duration: 0s !important;
+    }
+  }
+}
+
+@media print {
+  .dark-2 {
+    &,
+    &::before,
+    &::after {
+      -webkit-print-color-adjust: exact;
+      print-color-adjust: exact;
+    }
+  }
+}
+```
