@@ -10,3 +10,4 @@
 ## 📂 样式集合
 
 - [边框-彩虹框](./rainbow-border/index.md)
+- [使用 CSS mask 反转边框半径](./mask-border-radius/index.md)
