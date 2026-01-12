@@ -8,8 +8,11 @@ sticky: 1
 
 [Github:https://github.com/kirillmurashov/vue-drag-resize](https://github.com/kirillmurashov/vue-drag-resize)
 
+<<<<<<<< HEAD:docs/sop/vueComponents/VueDragResize.md
 <!-- ![图片](http://picturebed.gaolin.online/blog/Vue-Drag-Resize/image.gif) -->
 
+========
+>>>>>>>> 51a93b8e5501a6cb2885b75a2a03ca93eaf28282:docs/frontend/interaction/VueDragResize.md
 ## 安装
 
 ```sh
@@ -27,6 +30,7 @@ import VueDragResize from "vue-drag-resize";  // [!code focus]
 Vue.component("vue-drag-resize", VueDragResize); // [!code focus]
 ```
 
+<<<<<<<< HEAD:docs/sop/vueComponents/VueDragResize.md
 ##### 组件内引入
 
 ```vue
@@ -70,6 +74,9 @@ export default {
   },
 };
 ```
+========
+##### Dome
+>>>>>>>> 51a93b8e5501a6cb2885b75a2a03ca93eaf28282:docs/frontend/interaction/VueDragResize.md
 
 ## API
 

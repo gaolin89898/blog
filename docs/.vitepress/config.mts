@@ -33,23 +33,62 @@ export default defineConfig({
     nav: [
       { text: "首页", link: "/" },
       {
-        text: "Vue组件",
+        text: "前端开发",
         items: [
           {
-            text: "echarts-liquidfill",
-            link: "/sop/vueComponents/EchartsLiquidfill.md",
+            text: "UI 与样式",
+            link: "/frontend/ui-design/index.md",
           },
           {
-            text: "vue-drag-resize",
-            link: "/sop/vueComponents/VueDragResize.md",
+            text: "前端框架",
+            link: "/frontend/frameworks/index.md",
+          },
+          {
+            text: "前端工程化",
+            link: "/frontend/engineering/index.md",
+          },
+          {
+            text: "数据可视化",
+            link: "/frontend/visualization/index.md",
+          },
+          {
+            text: "前端交互",
+            link: "/frontend/interaction/index.md",
           },
         ],
       },
       {
-        text: "工具配置",
+        text: "后端开发",
         items: [
-          { text: "oh-my-posh", link: "/sop/OnMyPosh.md" },
-          { text: "博客评论集成", link: "/sop/CommentIntegration.md" },
+          {
+            text: "NodeJS",
+            link: "/backend/nodejs/index.md",
+          },
+        ],
+      },
+      {
+        text: "开发工具与环境",
+        items: [
+          {
+            text: "编辑器与插件",
+            link: "/tools/editors/index.md",
+          },
+          {
+            text: "终端工具",
+            link: "/tools/terminals/index.md",
+          },
+          {
+            text: "git",
+            link: "/tools/git/index.md",
+          },
+          {
+            text: "自动化脚本",
+            link: "/tools/automation/index.md",
+          },
+          {
+            text: "wsl",
+            link: "/tools/wsl/index.md",
+          },
         ],
       },
     ],
