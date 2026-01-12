@@ -8,11 +8,8 @@ ECharts 中的 Liquidfill（液体填充图）是一种图表类型，用于直�
 
 [Github:https://github.com/ecomfe/echarts-liquidfill](https://github.com/ecomfe/echarts-liquidfill)
 
-<<<<<<<< HEAD:docs/sop/vueComponents/EchartsLiquidfill.md
 <!-- ![图片](http://picturebed.gaolin.online/blog/echarts-liquidfill/echarts-liquidfill.png) -->
 
-========
->>>>>>>> 51a93b8e5501a6cb2885b75a2a03ca93eaf28282:docs/frontend/visualization/EchartsLiquidfill.md
 ## 安装
 
 ### 通过 NPM
@@ -36,11 +33,8 @@ import * as echarts from "echarts";
 import "echarts-liquidfill";
 ```
 
-<<<<<<<< HEAD:docs/sop/vueComponents/EchartsLiquidfill.md
-========
-### DOME
+### DEMO
 
->>>>>>>> 51a93b8e5501a6cb2885b75a2a03ca93eaf28282:docs/frontend/visualization/EchartsLiquidfill.md
 ## API
 
 ### 基本参数
