@@ -11,22 +11,24 @@
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.3.1",
-    "@sugarat/theme": "^0.2.27",
+    "@sugarat/theme": "^0.5.14",
     "@vitepress-demo-preview/component": "^2.3.2",
     "@vitepress-demo-preview/plugin": "^1.2.3",
-    "element-plus": "^2.5.3",
+    "element-plus": "^2.13.1",
     "vite": "^5.2.8",
-    "vue": "3.4.21",
-    "vue-drag-resize": "^1.5.4",
+    "vue": "3.5.26",
     "vue-tsc": "^2.0.13"
   },
   "directories": {
     "doc": "docs"
   },
   "devDependencies": {
-    "@arco-design/web-vue": "^2.55.1",
+    "markdown-it-container": "3.0.0",
     "sass": "^1.64.1",
     "typescript": "^5.1.6",
     "vitepress": "1.0.0-rc.45"
+  },
+  "peerDependencies": {
+    "markdown-it-container": "3.0.0"
   }
 }

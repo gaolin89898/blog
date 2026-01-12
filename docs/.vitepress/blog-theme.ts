@@ -46,6 +46,17 @@ const blogTheme = getThemeConfig({
   // 文章默认作者
   author: '高木木',
 
+  // 评论配置
+  comment: {
+    repo: 'gaolin89898/blog', // 你的 GitHub 仓库地址（只需 owner/repo 格式）
+    repoId: 'R_kgDOLjnl7g', // 你的仓库 ID
+    category: 'Announcements', // 讨论区分类
+    categoryId: 'DIC_kwDOLjnl7s4C0y71', // 讨论区分类 ID
+    mapping: 'pathname', // 映射方式
+    inputPosition: 'bottom',
+    lang: 'zh-CN'
+  },
+
   // 友链
   friend: [
     {

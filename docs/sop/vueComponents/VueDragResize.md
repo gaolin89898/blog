@@ -8,7 +8,7 @@ sticky: 1
 
 [Github:https://github.com/kirillmurashov/vue-drag-resize](https://github.com/kirillmurashov/vue-drag-resize)
 
-![图片](http://picturebed.gaolin.online/blog/Vue-Drag-Resize/image.gif)
+<!-- ![图片](http://picturebed.gaolin.online/blog/Vue-Drag-Resize/image.gif) -->
 
 ## 安装
 
@@ -23,23 +23,11 @@ $ npm i -s vue-drag-resize
 
 ```js
 import Vue from "vue";
-import VueDragResize from "vue-drag-resize";
-
-Vue.component("vue-drag-resize", VueDragResize);
+import VueDragResize from "vue-drag-resize";  // [!code focus]
+Vue.component("vue-drag-resize", VueDragResize); // [!code focus]
 ```
 
-##### Dome
-
-<!-- <script lang="ts" setup>
-  // import VueDragResize from '../publics/VueDragResize/index.vue'
-</script> -->
-
-<!-- <preview path="../publics/VueDragResize/index.vue"></preview> -->
-<!-- <VueDragResize></VueDragResize> -->
-
-<iframe src="https://cn.vitejs.dev/guide/" frameborder="0" style="width:100%;height:500px" scrolling="no"></iframe>
-
-<!-- ##### 组件内引入
+##### 组件内引入
 
 ```vue
 <div id="app">
@@ -81,7 +69,7 @@ export default {
     },
   },
 };
-``` -->
+```
 
 ## API
 

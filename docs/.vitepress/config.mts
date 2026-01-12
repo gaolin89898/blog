@@ -33,15 +33,24 @@ export default defineConfig({
     nav: [
       { text: "首页", link: "/" },
       {
-        text: "组件文档",
+        text: "Vue组件",
         items: [
-          { text: "echarts-liquidfill", link: "/sop/EchartsLiquidfill.md" },
-          { text: "vue-drag-resize", link: "/sop/VueDragResize.md" },
+          {
+            text: "echarts-liquidfill",
+            link: "/sop/vueComponents/EchartsLiquidfill.md",
+          },
+          {
+            text: "vue-drag-resize",
+            link: "/sop/vueComponents/VueDragResize.md",
+          },
         ],
       },
       {
         text: "工具配置",
-        items: [{ text: "oh-my-posh", link: "/sop/OnMyPosh.md" }],
+        items: [
+          { text: "oh-my-posh", link: "/sop/OnMyPosh.md" },
+          { text: "博客评论集成", link: "/sop/CommentIntegration.md" },
+        ],
       },
     ],
     socialLinks: [

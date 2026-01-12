@@ -8,7 +8,7 @@ ECharts 中的 Liquidfill（液体填充图）是一种图表类型，用于直�
 
 [Github:https://github.com/ecomfe/echarts-liquidfill](https://github.com/ecomfe/echarts-liquidfill)
 
-![图片](http://picturebed.gaolin.online/blog/echarts-liquidfill/echarts-liquidfill.png)
+<!-- ![图片](http://picturebed.gaolin.online/blog/echarts-liquidfill/echarts-liquidfill.png) -->
 
 ## 安装
 
@@ -32,11 +32,6 @@ $ npm install echarts-liquidfill
 import * as echarts from "echarts";
 import "echarts-liquidfill";
 ```
-
-## DOME
-<a-button type="primary">Primary</a-button>
-
-
 
 ## API
 
