@@ -91,6 +91,15 @@ export default defineConfig({
           },
         ],
       },
+      {
+        text: "日常生活",
+        items: [
+          {
+            text: "玩具模型",
+            link: "/daily/toy-models/index.md",
+          },
+        ],
+      },
     ],
     socialLinks: [
       {
