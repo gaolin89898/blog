@@ -10,6 +10,7 @@ export default defineConfig({
   lang: "zh-cn",
   title: "高木木的博客",
   description: "高木木的博客，基于 vitepress 实现",
+  outDir: "../dist",
   lastUpdated: true,
   cleanUrls: true,
   head: [
