@@ -31,7 +31,7 @@ const blogTheme = getThemeConfig({
     // message: '下面 的内容和图标都是可以修改的噢（当然本条内容也是可以隐藏的）',
     copyright: 'MIT License | 高木木',
     icpRecord: {
-      name: '陕ICP备2024031661号-1',
+      name: '陕ICP备2026001608号-1',
       link: 'https://beian.miit.gov.cn/'
     },
     // securityRecord: {
