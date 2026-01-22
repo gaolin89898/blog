@@ -65,6 +65,10 @@ export default defineConfig({
             text: "NodeJS",
             link: "/backend/nodejs/index.md",
           },
+          {
+            text: "Nginx",
+            link: "/backend/nginx/index.md",
+          },
         ],
       },
       {
