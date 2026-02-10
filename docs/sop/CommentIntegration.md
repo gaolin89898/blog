@@ -1,4 +1,11 @@
 ---
+tags:
+  - 运维
+  - SOP
+description: 标准作业程序与运维文档集成评论模块指南
+---
+
+---
 sticky: 1
 ---
 
@@ -28,39 +35,3 @@ sticky: 1
 
 *   `data-repo`
 *   `data-repo-id`
-*   `data-category`
-*   `data-category-id`
-
-### 3. 配置项目
-
-打开项目中的 `docs/.vitepress/blog-theme.ts` 文件，找到 `comment` 配置项并填入刚才获取的信息。
-
-```typescript
-// docs/.vitepress/blog-theme.ts
-export default {
-  // ...
-  comment: {
-    repo: 'gaolin89898/blog', // 仓库地址
-    repoId: 'YOUR_REPO_ID', // 替换为你的 repoId
-    category: 'Announcements', // 分类
-    categoryId: 'YOUR_CATEGORY_ID', // 替换为你的 categoryId
-    mapping: 'pathname',
-  },
-  // ...
-}
-```
-
-### 4. 验证
-
-配置完成后，重启项目：
-
-```bash
-pnpm dev
-```
-
-进入任意文章页面，滚动到底部，应该能看到评论框。
-
-## 常见问题
-
-*   **评论框未显示**：检查 `repoId` 和 `categoryId` 是否正确。
-*   **无法评论**：确保仓库已安装 Giscus App 且 Discussions 功能已开启。

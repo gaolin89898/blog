@@ -1,5 +1,6 @@
 ---
 sticky: 1
+description: ECharts 液体填充图的安装、引入与参数说明
 ---
 
 # echarts-liquidfill（液体填充图）

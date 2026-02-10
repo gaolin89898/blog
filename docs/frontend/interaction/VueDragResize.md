@@ -1,5 +1,6 @@
 ---
 sticky: 1
+description: vue-drag-resize 组件的安装、使用与 API 参数说明
 ---
 
 # vue-drag-resize（拖动-调整大小的 vue 组件）

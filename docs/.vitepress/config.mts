@@ -97,6 +97,19 @@ export default defineConfig({
         ],
       },
       {
+        text: "AI 相关",
+        items: [
+          {
+            text: "OpenCode",
+            link: "/tools/editors/opencode.md",
+          },
+          {
+            text: "Oh My OpenCode",
+            link: "/tools/opencode-plugins/oh-my-opencode.md",
+          },
+        ],
+      },
+      {
         text: "日常生活",
         items: [
           {

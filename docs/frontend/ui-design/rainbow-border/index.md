@@ -1,3 +1,7 @@
+---
+description: 彩虹渐变边框光晕效果，使用 conic-gradient 与模糊扩散
+---
+
 # 边框-彩虹框
 
 <div class="rainbow-glow">

@@ -1,3 +1,7 @@
+---
+description: 通过 CSS mask 反转边框半径，实现图片内凹角效果
+---
+
 # 使用 CSS mask 反转边框半径
 
 ## dome
