@@ -9,7 +9,7 @@ description: vue-drag-resize 组件的安装、使用与 API 参数说明
 
 [Github:https://github.com/kirillmurashov/vue-drag-resize](https://github.com/kirillmurashov/vue-drag-resize)
 
-<!-- ![图片](http://picturebed.gaolin.online/blog/Vue-Drag-Resize/image.gif) -->
+![图片](https://img.gaolin.xin/blog/vue-drag-resize.gif)
 
 ## 安装
 
