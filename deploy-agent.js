@@ -35,31 +35,18 @@ function deploy(password) {
     // 执行 scp 命令，将 dist 下的所有文件传输到远程服务器
     console.log("正在传输文件到远程服务器...");
     
+    // 使用 WSL 执行 scp 命令
+    console.log("使用 WSL 执行部署...");
+    // 将 Windows 路径转换为 WSL 路径
+    const wslDistPath = execSync(`wsl wslpath -a "${distPath}"`, { encoding: "utf8" }).trim();
+    
     let scpCommand;
     if (password) {
-      try {
-        // 尝试使用 WSL 中的 sshpass
-        console.log("尝试使用 WSL 中的 sshpass...");
-        // 将 Windows 路径转换为 WSL 路径
-        const wslDistPath = execSync(`wsl wslpath -a "${distPath}"`, { encoding: "utf8" }).trim();
-        // 使用 WSL 命令执行 scp，添加 -o 选项跳过主机密钥验证
-        scpCommand = `wsl sshpass -p "${password}" scp -r -o StrictHostKeyChecking=no "${wslDistPath}"/\* root@8.162.12.148:/var/www/blog/`;
-      } catch (error) {
-        try {
-          // 检查系统中的 sshpass 是否可用
-          execSync("sshpass --version", { stdio: "ignore" });
-          // 使用系统中的 sshpass 命令传递密码
-          scpCommand = `sshpass -p "${password}" scp -r -o StrictHostKeyChecking=no "${distPath}\*" root@8.162.12.148:/var/www/blog/`;
-        } catch (error) {
-          // sshpass 不可用，提示用户并使用普通 scp 命令
-          console.warn("sshpass 工具不可用，将使用普通 scp 命令，请手动输入密码。");
-          console.warn("建议安装 sshpass 工具以实现自动化部署。");
-          scpCommand = `scp -r -o StrictHostKeyChecking=no "${distPath}\*" root@8.162.12.148:/var/www/blog/`;
-        }
-      }
+      // 使用 WSL 中的 sshpass 传递密码
+      scpCommand = `wsl sshpass -p "${password}" scp -r -o StrictHostKeyChecking=no "${wslDistPath}"/\* root@8.162.12.148:/var/www/blog/`;
     } else {
       // 不使用密码，需要手动输入
-      scpCommand = `scp -r -o StrictHostKeyChecking=no "${distPath}\*" root@8.162.12.148:/var/www/blog/`;
+      scpCommand = `wsl scp -r -o StrictHostKeyChecking=no "${wslDistPath}"/\* root@8.162.12.148:/var/www/blog/`;
     }
     
     execSync(scpCommand, {
