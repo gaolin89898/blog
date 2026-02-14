@@ -8,8 +8,7 @@
     "dev": "vitepress dev docs ",
     "build": "vitepress build docs",
     "serve": "vitepress serve docs",
-    "deploy": "node deploy-agent.js",
-    "deploy:password": "node deploy-agent.js --password"
+    "deploy": "node deploy-agent.js"
   },
   "dependencies": {
     "@element-plus/icons-vue": "^2.3.1",
