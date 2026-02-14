@@ -37,8 +37,17 @@ function deploy(password) {
     
     let scpCommand;
     if (password) {
-      // 使用 sshpass 命令传递密码
-      scpCommand = `sshpass -p "${password}" scp -r "${distPath}\*" root@8.162.12.148:/var/www/blog/`;
+      try {
+        // 检查 sshpass 是否可用
+        execSync("sshpass --version", { stdio: "ignore" });
+        // 使用 sshpass 命令传递密码
+        scpCommand = `sshpass -p "${password}" scp -r "${distPath}\*" root@8.162.12.148:/var/www/blog/`;
+      } catch (error) {
+        // sshpass 不可用，提示用户并使用普通 scp 命令
+        console.warn("sshpass 工具不可用，将使用普通 scp 命令，请手动输入密码。");
+        console.warn("建议安装 sshpass 工具以实现自动化部署。");
+        scpCommand = `scp -r "${distPath}\*" root@8.162.12.148:/var/www/blog/`;
+      }
     } else {
       // 不使用密码，需要手动输入
       scpCommand = `scp -r "${distPath}\*" root@8.162.12.148:/var/www/blog/`;
