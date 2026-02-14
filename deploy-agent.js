@@ -42,7 +42,8 @@ function deploy(password) {
         console.log("尝试使用 WSL 中的 sshpass...");
         // 将 Windows 路径转换为 WSL 路径
         const wslDistPath = execSync(`wsl wslpath -a "${distPath}"`, { encoding: "utf8" }).trim();
-        scpCommand = `wsl sshpass -p "${password}" scp -r "${wslDistPath}/*" root@8.162.12.148:/var/www/blog/`;
+        // 使用 WSL 命令执行 scp，将通配符放在引号外
+        scpCommand = `wsl sshpass -p "${password}" scp -r "${wslDistPath}"/\* root@8.162.12.148:/var/www/blog/`;
       } catch (error) {
         try {
           // 检查系统中的 sshpass 是否可用
