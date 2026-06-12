@@ -4,6 +4,7 @@ import {
   containerPreview,
   componentPreview,
 } from "@vitepress-demo-preview/plugin";
+import { tabsMarkdownPlugin } from "vitepress-plugin-tabs";
 
 export default defineConfig({
   extends: blogTheme,
@@ -148,6 +149,7 @@ export default defineConfig({
   },
   markdown: {
     config(md) {
+      md.use(tabsMarkdownPlugin);
       md.use(containerPreview);
       md.use(componentPreview);
     },
