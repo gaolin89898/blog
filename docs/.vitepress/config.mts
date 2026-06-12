@@ -62,8 +62,16 @@ export default defineConfig({
         text: "后端开发",
         items: [
           {
+            text: "项目记录",
+            link: "/projects/rfid/inventory-crud-backend-2026-05-18.md",
+          },
+          {
             text: "NodeJS",
             link: "/backend/nodejs/index.md",
+          },
+          {
+            text: "服务器部署",
+            link: "/backend/server/hongkong-server-image-setup.md",
           },
           {
             text: "Nginx",
@@ -77,6 +85,26 @@ export default defineConfig({
           {
             text: "编辑器与插件",
             link: "/tools/editors/index.md",
+          },
+          {
+            text: "工作常用工具",
+            link: "/tools/common/index.md",
+          },
+          {
+            text: "SSH",
+            link: "/tools/ssh/index.md",
+          },
+          {
+            text: "Docker",
+            link: "/tools/docker/index.md",
+          },
+          {
+            text: "rclone",
+            link: "/tools/rclone/index.md",
+          },
+          {
+            text: "Linux 排错",
+            link: "/tools/linux/kylin-virtual-keyboard-troubleshooting.md",
           },
           {
             text: "终端工具",
@@ -117,6 +145,10 @@ export default defineConfig({
             link: "/daily/toy-models/index.md",
           },
         ],
+      },
+      {
+        text: "工作日报",
+        link: "/daily/worklog/2026-06-12.md",
       },
       {
         text: "线上作品",
