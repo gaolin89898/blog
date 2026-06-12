@@ -4,6 +4,7 @@ import {
   containerPreview,
   componentPreview,
 } from "@vitepress-demo-preview/plugin";
+import { tabsMarkdownPlugin } from "vitepress-plugin-tabs";
 
 export default defineConfig({
   extends: blogTheme,
@@ -41,14 +42,6 @@ export default defineConfig({
             link: "/frontend/ui-design/index.md",
           },
           {
-            text: "前端框架",
-            link: "/frontend/frameworks/index.md",
-          },
-          {
-            text: "前端工程化",
-            link: "/frontend/engineering/index.md",
-          },
-          {
             text: "数据可视化",
             link: "/frontend/visualization/index.md",
           },
@@ -62,8 +55,16 @@ export default defineConfig({
         text: "后端开发",
         items: [
           {
+            text: "项目记录",
+            link: "/projects/rfid/inventory-crud-backend-2026-05-18.md",
+          },
+          {
             text: "NodeJS",
             link: "/backend/nodejs/index.md",
+          },
+          {
+            text: "服务器部署",
+            link: "/backend/server/hongkong-server-image-setup.md",
           },
           {
             text: "Nginx",
@@ -79,6 +80,26 @@ export default defineConfig({
             link: "/tools/editors/index.md",
           },
           {
+            text: "工作常用工具",
+            link: "/tools/common/index.md",
+          },
+          {
+            text: "SSH",
+            link: "/tools/ssh/index.md",
+          },
+          {
+            text: "Docker",
+            link: "/tools/docker/index.md",
+          },
+          {
+            text: "rclone",
+            link: "/tools/rclone/index.md",
+          },
+          {
+            text: "Linux 排错",
+            link: "/tools/linux/kylin-virtual-keyboard-troubleshooting.md",
+          },
+          {
             text: "终端工具",
             link: "/tools/terminals/index.md",
           },
@@ -89,10 +110,6 @@ export default defineConfig({
           {
             text: "自动化脚本",
             link: "/tools/automation/index.md",
-          },
-          {
-            text: "wsl",
-            link: "/tools/wsl/index.md",
           },
         ],
       },
@@ -110,13 +127,8 @@ export default defineConfig({
         ],
       },
       {
-        text: "日常生活",
-        items: [
-          {
-            text: "玩具模型",
-            link: "/daily/toy-models/index.md",
-          },
-        ],
+        text: "工作日报",
+        link: "/daily/worklog/2026-06-12.md",
       },
       {
         text: "线上作品",
@@ -137,6 +149,7 @@ export default defineConfig({
   },
   markdown: {
     config(md) {
+      md.use(tabsMarkdownPlugin);
       md.use(containerPreview);
       md.use(componentPreview);
     },
