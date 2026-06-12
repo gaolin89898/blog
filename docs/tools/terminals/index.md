@@ -7,4 +7,5 @@ description: 终端工具集合与配置指南
 
 # 终端工具
 
-- [oh-my-posh](./OnMyPosh.md)
+- [oh-my-posh 终端美化](./OnMyPosh.md)
+- [Fish 安装与配置](./fish/index.md)

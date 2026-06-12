@@ -41,14 +41,6 @@ export default defineConfig({
             link: "/frontend/ui-design/index.md",
           },
           {
-            text: "前端框架",
-            link: "/frontend/frameworks/index.md",
-          },
-          {
-            text: "前端工程化",
-            link: "/frontend/engineering/index.md",
-          },
-          {
             text: "数据可视化",
             link: "/frontend/visualization/index.md",
           },
@@ -118,10 +110,6 @@ export default defineConfig({
             text: "自动化脚本",
             link: "/tools/automation/index.md",
           },
-          {
-            text: "wsl",
-            link: "/tools/wsl/index.md",
-          },
         ],
       },
       {
@@ -134,15 +122,6 @@ export default defineConfig({
           {
             text: "Oh My OpenCode",
             link: "/tools/opencode-plugins/oh-my-opencode.md",
-          },
-        ],
-      },
-      {
-        text: "日常生活",
-        items: [
-          {
-            text: "玩具模型",
-            link: "/daily/toy-models/index.md",
           },
         ],
       },

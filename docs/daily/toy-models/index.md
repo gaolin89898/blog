@@ -2,6 +2,7 @@
 tags:
   - 生活
   - 玩具
+hidden: true
 description: 玩具模型收藏展示与心得分享
 ---
 
