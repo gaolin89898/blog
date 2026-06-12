@@ -3,83 +3,38 @@ tags:
   - 工具
   - VSCode
   - Linux
-description: Linux 版 VS Code 在应用内点击“更新”时，可能会跳转到官网下载页面，让用户手动下载 .deb 安装包。
+description: Linux VS Code apt 更新速查
 ---
 
-# Linux VS Code 更新配置
+# Linux VS Code 更新
 
-## 问题现象
+结论：Linux 版 VS Code 建议交给系统包管理器更新，不手动下载 `.deb`。
 
-Linux 版 VS Code 在应用内点击“更新”时，可能会跳转到官网下载页面，让用户手动下载 `.deb` 安装包。
-
-更推荐的方式是把 VS Code 接入系统包管理器，由 `apt` 负责安装和更新。这样以后不需要手动下载 `.deb`，直接用系统更新命令即可。
-
-## 当前机器状态
-
-当前 Ubuntu 机器上的 VS Code 已经由 Microsoft 官方 `apt` 源管理。
-
-软件源：
+当前确认：
 
 ```text
-https://packages.microsoft.com/repos/code
+源：https://packages.microsoft.com/repos/code
+版本：1.124.2
+记录：1.124.0-1781066808 -> 1.124.2-1781225536
 ```
 
-当前已确认版本：
-
-```text
-1.124.2
-```
-
-本次处理记录：
-
-```text
-从 1.124.0-1781066808 升级到 1.124.2-1781225536
-```
-
-## 检查 VS Code 是否已安装
-
-查看命令路径：
+## 检查
 
 ```bash
 which code
-```
-
-查看当前版本：
-
-```bash
 code --version
-```
-
-查看 `apt` 包来源：
-
-```bash
 apt policy code
 ```
 
-如果输出里能看到下面的软件源，说明已经接入 Microsoft 官方源：
+如果 `apt policy code` 里有 `packages.microsoft.com/repos/code`，说明已接入官方源。
 
-```text
-https://packages.microsoft.com/repos/code
-```
-
-## Ubuntu / Debian 添加官方 apt 源
-
-如果 `apt policy code` 没有显示 Microsoft 官方源，可以手动添加。
-
-安装必要工具：
+## 添加官方 apt 源
 
 ```bash
 sudo apt update
-sudo apt install wget gpg apt-transport-https
-```
-
-导入 Microsoft 签名密钥：
-
-```bash
+sudo apt install -y wget gpg apt-transport-https
 wget -qO- https://packages.microsoft.com/keys/microsoft.asc | gpg --dearmor | sudo tee /usr/share/keyrings/microsoft.gpg > /dev/null
 ```
-
-添加 VS Code 软件源：
 
 ```bash
 sudo tee /etc/apt/sources.list.d/vscode.sources > /dev/null <<'EOF'
@@ -92,70 +47,21 @@ Signed-By: /usr/share/keyrings/microsoft.gpg
 EOF
 ```
 
-刷新软件源并安装：
-
 ```bash
 sudo apt update
-sudo apt install code
+sudo apt install -y code
 ```
 
-## 单独更新 VS Code
-
-只更新 VS Code，不升级其他系统包：
+## 更新
 
 ```bash
+# 只更新 VS Code
 sudo apt update
 sudo apt install --only-upgrade code -y
-```
 
-这是日常最推荐的单独更新方式。
-
-## 随系统一起更新
-
-如果希望 VS Code 和其他系统软件一起更新：
-
-```bash
+# 或随系统一起更新
 sudo apt update
 sudo apt upgrade
 ```
 
-## 为什么应用内更新会跳网页
-
-可以这样理解：
-
-- VS Code 检测到有新版本
-- Linux 版通常不直接在应用内部替换自身
-- 如果系统包管理器没有正确接管更新，就会跳转到官网下载页面
-- 官方 `apt` 源配置好以后，更新交给 `apt` 处理
-
-## 常用命令汇总
-
-查看版本：
-
-```bash
-code --version
-```
-
-查看包来源：
-
-```bash
-apt policy code
-```
-
-刷新软件源：
-
-```bash
-sudo apt update
-```
-
-单独更新 VS Code：
-
-```bash
-sudo apt install --only-upgrade code -y
-```
-
-系统整体更新：
-
-```bash
-sudo apt upgrade
-```
+应用内“更新”跳网页时，直接用上面的 `apt` 命令即可。

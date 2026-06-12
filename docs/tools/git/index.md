@@ -2,636 +2,113 @@
 tags:
   - 工具
   - Git
-description: Git 安装、初始化配置和常用命令记录
+description: Git 安装、配置和常用命令速查
 ---
 
-# Git 安装与配置
+# Git 速查
 
-Git 是最常用的版本控制工具，用于管理代码历史、分支协作和远程仓库同步。
-
-常见场景：
-
-- 管理项目代码版本
-- 与 GitHub、GitLab、Gitee 等平台协作
-- 进行分支开发、合并和回滚
-
-## 安装与配置
-
-::: tabs
-=== Linux
-
-## 先检查是否已经安装
-
-查看版本：
+## 安装
 
 ```bash
-git --version
-```
+# Debian / Ubuntu
+sudo apt update && sudo apt install -y git
 
-如果输出版本号，说明 Git 已经安装。
-
-查看路径：
-
-```bash
-which git
-```
-
-## Debian / Ubuntu
-
-更新软件源：
-
-```bash
-sudo apt update
-```
-
-安装 Git：
-
-```bash
-sudo apt install -y git
-```
-
-## CentOS / RHEL / Rocky / AlmaLinux
-
-安装：
-
-```bash
+# RHEL / Rocky / Fedora
 sudo dnf install -y git
-```
 
-较老系统也可以使用：
-
-```bash
-sudo yum install -y git
-```
-
-## Fedora
-
-安装：
-
-```bash
-sudo dnf install -y git
-```
-
-## Arch / Manjaro
-
-安装：
-
-```bash
+# Arch / Manjaro
 sudo pacman -S --needed git
-```
 
-## openSUSE
-
-安装：
-
-```bash
-sudo zypper install -y git
-```
-
-## 验证 Git 是否可用
-
-查看版本：
-
-```bash
-git --version
-```
-
-查看帮助：
-
-```bash
-git --help
-```
-
-## 初始化基础配置
-
-设置用户名：
-
-```bash
-git config --global user.name "你的名字"
-```
-
-设置邮箱：
-
-```bash
-git config --global user.email "your_email@example.com"
-```
-
-建议设置默认分支名：
-
-```bash
-git config --global init.defaultBranch main
-```
-
-查看当前全局配置：
-
-```bash
-git config --global --list
-```
-
-## 常见配置文件
-
-用户级全局配置：
-
-```text
-~/.gitconfig
-```
-
-当前仓库配置：
-
-```text
-.git/config
-```
-
-系统级配置：
-
-```text
-/etc/gitconfig
-```
-
-## 设置常用别名
-
-例如：
-
-```bash
-git config --global alias.st status
-git config --global alias.co checkout
-git config --global alias.br branch
-git config --global alias.cm commit
-```
-
-之后可以直接用：
-
-```bash
-git st
-git co
-```
-
-## 配置默认编辑器
-
-例如使用 `vim`：
-
-```bash
-git config --global core.editor "vim"
-```
-
-如果你用 VS Code：
-
-```bash
-git config --global core.editor "code --wait"
-```
-
-## 配置换行符
-
-Linux 上通常建议：
-
-```bash
-git config --global core.autocrlf input
-```
-
-说明：
-
-- 这样提交时会把 CRLF 转成 LF
-- 适合 Linux 和 WSL 环境使用
-
-## 生成 SSH 密钥用于 Git
-
-生成密钥：
-
-```bash
-ssh-keygen -t ed25519 -C "your_email@example.com"
-```
-
-查看公钥：
-
-```bash
-cat ~/.ssh/id_ed25519.pub
-```
-
-把公钥添加到 GitHub、GitLab 或 Gitee 后，可以测试：
-
-```bash
-ssh -T git@github.com
-```
-
-## 常用 Git 命令
-
-初始化仓库：
-
-```bash
-git init
-```
-
-克隆仓库：
-
-```bash
-git clone <repo-url>
-```
-
-查看状态：
-
-```bash
-git status
-```
-
-添加文件：
-
-```bash
-git add .
-```
-
-提交：
-
-```bash
-git commit -m "init"
-```
-
-查看提交历史：
-
-```bash
-git log --oneline --graph --decorate
-```
-
-查看分支：
-
-```bash
-git branch
-```
-
-切换分支：
-
-```bash
-git switch branch-name
-```
-
-拉取更新：
-
-```bash
-git pull
-```
-
-推送更新：
-
-```bash
-git push
-```
-
-## 常见问题排查
-
-### 1. `git: command not found`
-
-说明 Git 没装好，或者 `PATH` 没生效。
-
-先检查：
-
-```bash
-which git
-git --version
-```
-
-### 2. 提交时报用户名或邮箱未配置
-
-执行：
-
-```bash
-git config --global user.name "你的名字"
-git config --global user.email "your_email@example.com"
-```
-
-### 3. SSH 拉取仓库失败
-
-重点检查：
-
-- SSH 密钥是否已生成
-- 公钥是否添加到代码托管平台
-- SSH 是否能连通
-
-测试：
-
-```bash
-ssh -T git@github.com
-```
-
-### 4. HTTPS 拉取仓库需要反复输入密码
-
-可以改用 SSH 协议，或者配置凭据管理。
-
-### 5. 换行符混乱
-
-检查设置：
-
-```bash
-git config --global core.autocrlf
-```
-
-Linux 下通常推荐：
-
-```bash
-git config --global core.autocrlf input
-```
-
-## 卸载 Git
-
-### Debian / Ubuntu
-
-```bash
-sudo apt remove -y git
-```
-
-### CentOS / RHEL / Rocky / AlmaLinux
-
-```bash
-sudo dnf remove -y git
-```
-
-### Arch / Manjaro
-
-```bash
-sudo pacman -Rns git
-```
-
-## 建议
-
-- 开发环境建议优先配置 `user.name` 和 `user.email`
-- 常用远程仓库操作建议直接配好 SSH
-- 初学阶段尽量先熟悉 `status`、`add`、`commit`、`pull`、`push`
-- 不熟悉回滚命令时，谨慎使用有破坏性的 Git 操作
-
-=== Windows
-
-## 先检查是否已经安装
-
-打开 `PowerShell` 或 `CMD`，执行：
-
-```powershell
-git --version
-```
-
-如果输出版本号，说明 Git 已经安装。
-
-查看路径：
-
-```powershell
-where git
-```
-
-## 方式一：安装 Git for Windows
-
-Windows 上最常见的安装方式是使用 Git for Windows。
-
-安装完成后通常会附带：
-
-- Git 命令行
-- Git Bash
-- 常用的 SSH 能力
-
-安装后验证：
-
-```powershell
-git --version
-```
-
-## 方式二：使用 winget 安装
-
-如果系统支持 `winget`，可以直接安装：
-
-```powershell
+# Windows
 winget install --id Git.Git -e
 ```
 
-安装完成后重新打开终端，再验证：
+## 基础配置
 
-```powershell
+```bash
 git --version
-```
-
-## 方式三：使用图形界面安装包
-
-你也可以直接下载安装 Git for Windows 安装包并安装。
-
-安装时常见选项建议：
-
-- 编辑器按你的习惯选择
-- 默认分支名建议选 `main`
-- PATH 一般选择让命令行可直接使用 Git
-- SSH 可使用 Git 自带 OpenSSH
-
-## 初始化基础配置
-
-设置用户名：
-
-```powershell
 git config --global user.name "你的名字"
-```
-
-设置邮箱：
-
-```powershell
 git config --global user.email "your_email@example.com"
-```
-
-设置默认分支名：
-
-```powershell
 git config --global init.defaultBranch main
-```
-
-查看全局配置：
-
-```powershell
 git config --global --list
 ```
 
-## 常见配置文件
+推荐编辑器：
 
-用户级全局配置：
-
-```text
-C:\Users\你的用户名\.gitconfig
+```bash
+git config --global core.editor "code --wait"
 ```
 
-当前仓库配置：
+换行符：
 
-```text
-.git\config
+```bash
+# Linux / WSL
+git config --global core.autocrlf input
+
+# Windows
+git config --global core.autocrlf true
 ```
 
-## 设置常用别名
+## SSH
 
-例如：
+```bash
+ssh-keygen -t ed25519 -C "your_email@example.com"
 
-```powershell
+# Linux / macOS
+cat ~/.ssh/id_ed25519.pub
+
+# Windows PowerShell
+type $env:USERPROFILE\.ssh\id_ed25519.pub
+
+# 测试 GitHub
+ssh -T git@github.com
+```
+
+## 日常命令
+
+| 用途 | 命令 |
+| --- | --- |
+| 克隆仓库 | `git clone <repo-url>` |
+| 查看状态 | `git status` |
+| 暂存全部 | `git add .` |
+| 提交 | `git commit -m "message"` |
+| 拉取 | `git pull` |
+| 推送 | `git push` |
+| 查看分支 | `git branch` |
+| 切换分支 | `git switch <branch>` |
+| 新建并切换分支 | `git switch -c <branch>` |
+| 合并分支 | `git merge <branch>` |
+| 查看日志 | `git log --oneline --graph --decorate` |
+| 查看工作区 diff | `git diff` |
+| 查看暂存区 diff | `git diff --cached` |
+| 撤回暂存 | `git restore --staged <file>` |
+| 丢弃工作区改动 | `git restore <file>` |
+| 修改最后一次提交 | `git commit --amend` |
+
+## 常用别名
+
+```bash
 git config --global alias.st status
 git config --global alias.co checkout
 git config --global alias.br branch
 git config --global alias.cm commit
+git config --global alias.lg "log --oneline --graph --decorate"
 ```
 
-之后可以直接执行：
+## 排查
 
-```powershell
-git st
-git co
-```
-
-## 配置默认编辑器
-
-如果使用 VS Code：
-
-```powershell
-git config --global core.editor "code --wait"
-```
-
-如果使用 Notepad++：
-
-```powershell
-git config --global core.editor "'C:/Program Files/Notepad++/notepad++.exe' -multiInst -notabbar -nosession -noPlugin"
-```
-
-## 配置换行符
-
-Windows 上常见配置：
-
-```powershell
-git config --global core.autocrlf true
-```
-
-说明：
-
-- 检出到本地时可转成 CRLF
-- 提交时会转回 LF
-
-## 配置 SSH 用于 Git
-
-生成密钥：
-
-```powershell
-ssh-keygen -t ed25519 -C "your_email@example.com"
-```
-
-查看公钥：
-
-```powershell
-type $env:USERPROFILE\.ssh\id_ed25519.pub
-```
-
-把公钥添加到 GitHub、GitLab 或 Gitee 后，测试：
-
-```powershell
-ssh -T git@github.com
-```
-
-## 常用 Git 命令
-
-初始化仓库：
-
-```powershell
-git init
-```
-
-克隆仓库：
-
-```powershell
-git clone <repo-url>
-```
-
-查看状态：
-
-```powershell
-git status
-```
-
-添加文件：
-
-```powershell
-git add .
-```
-
-提交：
-
-```powershell
-git commit -m "init"
-```
-
-查看提交历史：
-
-```powershell
-git log --oneline --graph --decorate
-```
-
-切换分支：
-
-```powershell
-git switch branch-name
-```
-
-拉取更新：
-
-```powershell
-git pull
-```
-
-推送更新：
-
-```powershell
-git push
-```
-
-## 常见问题排查
-
-### 1. `git` 命令找不到
-
-先检查：
-
-```powershell
-where git
+```bash
+where git       # Windows
+which git       # Linux
 git --version
+git config --global --list
+git remote -v
+git status --short --branch
 ```
 
-如果找不到，通常是没安装或 PATH 没生效，重开终端后再试。
+常见问题：
 
-### 2. 提交时报用户名或邮箱未配置
-
-执行：
-
-```powershell
-git config --global user.name "你的名字"
-git config --global user.email "your_email@example.com"
-```
-
-### 3. SSH 拉取失败
-
-重点检查：
-
-- SSH 密钥是否已生成
-- 公钥是否添加到代码托管平台
-- `ssh -T git@github.com` 是否能通过
-
-### 4. HTTPS 每次都要输入认证信息
-
-可以改用 SSH 协议，或者使用 Git Credential Manager。
-
-### 5. 换行符问题
-
-检查当前配置：
-
-```powershell
-git config --global core.autocrlf
-```
-
-## 卸载 Git
-
-如果是 `winget` 安装：
-
-```powershell
-winget uninstall --id Git.Git
-```
-
-如果是安装包安装，可以在“设置 -> 应用”中卸载 Git。
-
-## 建议
-
-- 安装后先配置 `user.name` 和 `user.email`
-- 常用远程仓库操作建议直接配置 SSH
-- Windows 下注意换行符设置，避免 CRLF/LF 混乱
-- 不熟悉回滚前，谨慎使用破坏性 Git 命令
-:::
+- `git` 找不到：检查是否安装、PATH 是否生效
+- 不能提交：配置 `user.name` 和 `user.email`
+- SSH 失败：确认公钥已添加到 GitHub / GitLab / Gitee
+- HTTPS 总要密码：优先改用 SSH 或配置凭据管理器
