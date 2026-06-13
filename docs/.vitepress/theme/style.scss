@@ -12,3 +12,40 @@
     rgba(var(--bg-gradient-home), 0) 150%
   );
 }
+
+/* ============================================================
+ * Tabs 品牌图标（vitepress-plugin-tabs）
+ * 通过 id 前缀匹配 tab label，给 ::before 加品牌 SVG 图标
+ * 同一标签页内 Linux 发行版已合并为单标签，规则相应简化
+ * ============================================================ */
+.plugin-tabs--tab {
+  position: relative;
+  padding-left: 26px !important;
+
+  &::before {
+    content: "";
+    position: absolute;
+    left: 8px;
+    top: 50%;
+    width: 14px;
+    height: 14px;
+    transform: translateY(-50%);
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: contain;
+    opacity: 0.85;
+  }
+}
+
+/* Linux 合并标签 */
+.plugin-tabs--tab[id^="tab-Linux"]::before {
+  background-image: url("/icons/brands/linux.svg");
+}
+/* Windows 标签（LTS / 当前版本等变体） */
+.plugin-tabs--tab[id^="tab-Windows"]::before {
+  background-image: url("/icons/brands/windows.svg");
+}
+/* macOS 标签（nvm 等） */
+.plugin-tabs--tab[id^="tab-macOS"]::before {
+  background-image: url("/icons/brands/apple.svg");
+}

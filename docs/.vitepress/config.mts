@@ -9,8 +9,8 @@ import { tabsMarkdownPlugin } from "vitepress-plugin-tabs";
 export default defineConfig({
   extends: blogTheme,
   lang: "zh-cn",
-  title: "高木木的博客",
-  description: "高木木的博客，基于 vitepress 实现",
+  title: "林九序的博客",
+  description: "林九序的博客，基于 vitepress 实现",
   outDir: "../dist",
   lastUpdated: true,
   cleanUrls: true,
@@ -38,8 +38,12 @@ export default defineConfig({
         text: "前端开发",
         items: [
           {
+            text: "前端总览",
+            link: "/frontend/index.md",
+          },
+          {
             text: "UI 与样式",
-            link: "/frontend/ui-design/index.md",
+            link: "/frontend/ui-style/index.md",
           },
           {
             text: "数据可视化",
@@ -55,80 +59,110 @@ export default defineConfig({
         text: "后端开发",
         items: [
           {
-            text: "项目记录",
-            link: "/projects/rfid/inventory-crud-backend-2026-05-18.md",
+            text: "后端总览",
+            link: "/backend/index.md",
           },
           {
-            text: "NodeJS",
+            text: "Node.js",
             link: "/backend/nodejs/index.md",
-          },
-          {
-            text: "服务器部署",
-            link: "/backend/server/hongkong-server-image-setup.md",
           },
           {
             text: "Nginx",
             link: "/backend/nginx/index.md",
           },
+          {
+            text: "服务器",
+            link: "/backend/server/hongkong-server-image-setup.md",
+          },
         ],
       },
       {
-        text: "开发工具与环境",
+        text: "工具",
         items: [
           {
-            text: "编辑器与插件",
+            text: "工具总览",
+            link: "/tools/index.md",
+          },
+          {
+            text: "编辑器",
             link: "/tools/editors/index.md",
           },
           {
-            text: "工作常用工具",
-            link: "/tools/common/index.md",
+            text: "终端",
+            link: "/tools/terminal/index.md",
           },
           {
-            text: "SSH",
-            link: "/tools/ssh/index.md",
+            text: "Git",
+            link: "/tools/git/index.md",
           },
           {
             text: "Docker",
             link: "/tools/docker/index.md",
           },
           {
+            text: "SSH",
+            link: "/tools/ssh/index.md",
+          },
+          {
             text: "rclone",
             link: "/tools/rclone/index.md",
           },
           {
-            text: "Linux 排错",
-            link: "/tools/linux/kylin-virtual-keyboard-troubleshooting.md",
-          },
-          {
-            text: "终端工具",
-            link: "/tools/terminals/index.md",
-          },
-          {
-            text: "git",
-            link: "/tools/git/index.md",
-          },
-          {
-            text: "自动化脚本",
+            text: "自动化",
             link: "/tools/automation/index.md",
           },
         ],
       },
       {
-        text: "AI 相关",
+        text: "AI 工具",
         items: [
           {
+            text: "AI 总览",
+            link: "/ai/index.md",
+          },
+          {
             text: "OpenCode",
-            link: "/tools/editors/opencode.md",
+            link: "/ai/opencode.md",
+          },
+          {
+            text: "OpenClow",
+            link: "/ai/openclow.md",
           },
           {
             text: "Oh My OpenCode",
-            link: "/tools/opencode-plugins/oh-my-opencode.md",
+            link: "/ai/opencode-plugins/oh-my-opencode.md",
+          },
+        ],
+      },
+      {
+        text: "项目实战",
+        items: [
+          {
+            text: "项目总览",
+            link: "/projects/index.md",
+          },
+          {
+            text: "RFID 项目",
+            link: "/projects/rfid/index.md",
+          },
+          {
+            text: "桌宠项目",
+            link: "/projects/desktop-pet/index.md",
+          },
+        ],
+      },
+      {
+        text: "博客配置",
+        items: [
+          {
+            text: "评论模块",
+            link: "/blog-config/comment-integration.md",
           },
         ],
       },
       {
         text: "工作日报",
-        link: "/daily/worklog/2026-06-12.md",
+        link: "/daily/index.md",
       },
       {
         text: "线上作品",

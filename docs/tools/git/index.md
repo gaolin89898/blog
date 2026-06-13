@@ -9,6 +9,9 @@ description: Git 安装、配置和常用命令速查
 
 ## 安装
 
+::: tabs
+== Linux
+
 ```bash
 # Debian / Ubuntu
 sudo apt update && sudo apt install -y git
@@ -18,10 +21,15 @@ sudo dnf install -y git
 
 # Arch / Manjaro
 sudo pacman -S --needed git
+```
 
-# Windows
+== Windows
+
+```powershell
 winget install --id Git.Git -e
 ```
+
+:::
 
 ## 基础配置
 
@@ -41,26 +49,49 @@ git config --global core.editor "code --wait"
 
 换行符：
 
-```bash
-# Linux / WSL
-git config --global core.autocrlf input
+::: tabs
+== Linux / WSL
 
-# Windows
+```bash
+git config --global core.autocrlf input
+```
+
+== Windows
+
+```bash
 git config --global core.autocrlf true
 ```
 
+:::
+
 ## SSH
+
+生成密钥：
 
 ```bash
 ssh-keygen -t ed25519 -C "your_email@example.com"
+```
 
-# Linux / macOS
+查看公钥：
+
+::: tabs
+== Linux / macOS
+
+```bash
 cat ~/.ssh/id_ed25519.pub
+```
 
-# Windows PowerShell
+== Windows PowerShell
+
+```powershell
 type $env:USERPROFILE\.ssh\id_ed25519.pub
+```
 
-# 测试 GitHub
+:::
+
+测试 GitHub：
+
+```bash
 ssh -T git@github.com
 ```
 
@@ -97,9 +128,22 @@ git config --global alias.lg "log --oneline --graph --decorate"
 
 ## 排查
 
+::: tabs
+== Linux / macOS
+
 ```bash
-where git       # Windows
-which git       # Linux
+which git
+```
+
+== Windows
+
+```powershell
+where git
+```
+
+:::
+
+```bash
 git --version
 git config --global --list
 git remote -v

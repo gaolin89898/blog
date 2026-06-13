@@ -10,16 +10,26 @@ description: nvm / nvm-windows 安装和 Node.js 版本管理速查
 
 Linux / macOS 用 `nvm`，Windows 用 `nvm-windows`。两者名字相同，但不是同一个实现。
 
-## Linux / macOS
+## 安装
 
-安装：
+::: tabs
+== Linux / macOS
 
 ```bash
 curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/master/install.sh | bash
 source ~/.bashrc
 ```
 
-常用命令：
+== Windows
+
+安装 `nvm-windows` 后重新打开终端。
+
+:::
+
+## 常用命令
+
+::: tabs
+== Linux / macOS
 
 | 用途 | 命令 |
 | --- | --- |
@@ -37,11 +47,7 @@ source ~/.bashrc
 | 按 `.nvmrc` 切换 | `nvm use` |
 | 按 `.nvmrc` 安装 | `nvm install` |
 
-## Windows
-
-安装 `nvm-windows` 后重新打开终端。
-
-常用命令：
+== Windows
 
 | 用途 | 命令 |
 | --- | --- |
@@ -54,6 +60,8 @@ source ~/.bashrc
 | 查看 npm | `npm -v` |
 | 查 nvm 路径 | `where nvm` |
 | 查 node 路径 | `where node` |
+
+:::
 
 ## 包管理器
 

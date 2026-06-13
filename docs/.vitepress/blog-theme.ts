@@ -29,7 +29,7 @@ const blogTheme = getThemeConfig({
   footer: {
     // message 字段支持配置为HTML内容，配置多条可以配置为数组
     // message: '下面 的内容和图标都是可以修改的噢（当然本条内容也是可以隐藏的）',
-    copyright: 'MIT License | 高木木',
+    copyright: 'MIT License | 林九序',
     icpRecord: {
       name: '陕ICP备2026001608号-1',
       link: 'https://beian.miit.gov.cn/'
@@ -44,7 +44,7 @@ const blogTheme = getThemeConfig({
   themeColor: 'el-blue',
 
   // 文章默认作者
-  author: '高木木',
+  author: '林九序',
 
   // 评论配置
   comment: {

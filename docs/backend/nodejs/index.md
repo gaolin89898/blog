@@ -11,12 +11,15 @@ Node.js 常用于前端工程化、服务端脚本和本地开发工具链。
 
 ## 安装
 
+::: tabs
+== Linux
+
 ```bash
-# Debian / Ubuntu
+# Debian / Ubuntu（系统源）
 sudo apt update
 sudo apt install -y nodejs npm
 
-# NodeSource LTS
+# Debian / Ubuntu（NodeSource LTS）
 curl -fsSL https://deb.nodesource.com/setup_lts.x | sudo -E bash -
 sudo apt install -y nodejs
 
@@ -28,13 +31,17 @@ sudo dnf install -y nodejs
 sudo pacman -S --needed nodejs npm
 ```
 
+== Windows
+
 ```powershell
-# Windows LTS
+# LTS
 winget install OpenJS.NodeJS.LTS
 
-# Windows 当前版本
+# 当前版本
 winget install OpenJS.NodeJS
 ```
+
+:::
 
 多项目切换版本时优先用：
 
@@ -47,9 +54,24 @@ winget install OpenJS.NodeJS
 | --- | --- |
 | Node 版本 | `node -v` |
 | npm 版本 | `npm -v` |
-| Linux 路径 | `which node && which npm` |
-| Windows 路径 | `where node && where npm` |
 | 测试运行 | `node -e "console.log('hello node')"` |
+
+路径查询：
+
+::: tabs
+== Linux / macOS
+
+```bash
+which node && which npm
+```
+
+== Windows
+
+```powershell
+where node && where npm
+```
+
+:::
 
 ## 包管理器
 
@@ -75,13 +97,31 @@ winget install OpenJS.NodeJS
 
 ## 卸载
 
-| 系统 | 命令 |
-| --- | --- |
-| Debian / Ubuntu | `sudo apt remove -y nodejs npm` |
-| RHEL / Fedora | `sudo dnf remove -y nodejs` |
-| Arch / Manjaro | `sudo pacman -Rns nodejs npm` |
-| Windows LTS | `winget uninstall OpenJS.NodeJS.LTS` |
-| Windows 当前版本 | `winget uninstall OpenJS.NodeJS` |
+::: tabs
+== Linux
+
+```bash
+# Debian / Ubuntu
+sudo apt remove -y nodejs npm
+
+# RHEL / Rocky / Fedora
+sudo dnf remove -y nodejs
+
+# Arch / Manjaro
+sudo pacman -Rns nodejs npm
+```
+
+== Windows
+
+```powershell
+# LTS
+winget uninstall OpenJS.NodeJS.LTS
+
+# 当前版本
+winget uninstall OpenJS.NodeJS
+```
+
+:::
 
 ## 排查
 

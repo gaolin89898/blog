@@ -9,75 +9,64 @@ description: SSH 安装、连接和密钥配置速查
 
 SSH 常用于远程登录服务器、传输文件，以及通过密钥访问 Git 仓库。
 
-## Linux
+## 安装与启动
 
-### 安装
+::: tabs
+== Linux
 
 ```bash
 # Debian / Ubuntu
 sudo apt update
 sudo apt install -y openssh-client openssh-server
-
-# CentOS / RHEL / Rocky / AlmaLinux / Fedora
-sudo dnf install -y openssh-clients openssh-server
-
-# Arch / Manjaro
-sudo pacman -S --needed openssh
-```
-
-### 启动服务端
-
-```bash
 sudo systemctl enable --now ssh
-# 或
-sudo systemctl enable --now sshd
-```
-
-### 验证
-
-```bash
-ssh -V
 sudo systemctl status ssh
+ssh localhost
+
+# RHEL / Rocky / AlmaLinux / Fedora / Arch / Manjaro
+sudo dnf install -y openssh-clients openssh-server
+# Arch / Manjaro: sudo pacman -S --needed openssh
+sudo systemctl enable --now sshd
+sudo systemctl status sshd
 ssh localhost
 ```
 
-### 防火墙
-
-```bash
-sudo ufw allow ssh
-sudo firewall-cmd --permanent --add-service=ssh
-sudo firewall-cmd --reload
-```
-
-## Windows
-
-### 检查
+== Windows
 
 ```powershell
 ssh -V
 Get-Service sshd
-```
 
-### 安装 OpenSSH
-
-```powershell
 Add-WindowsCapability -Online -Name OpenSSH.Client~~~~0.0.1.0
 Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
-```
 
-### 启动服务端
-
-```powershell
 Start-Service sshd
 Set-Service -Name sshd -StartupType Automatic
 Get-Service sshd
 ```
 
-### 放行防火墙
+:::
+
+## 防火墙
+
+::: tabs
+== Linux
+
+```bash
+# Debian / Ubuntu
+sudo ufw allow ssh
+
+# RHEL / Rocky / Fedora
+sudo firewall-cmd --permanent --add-service=ssh
+sudo firewall-cmd --reload
+```
+
+== Windows
 
 ```powershell
 New-NetFirewallRule -Name sshd -DisplayName "OpenSSH Server (sshd)" -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22
 ```
+
+:::
 
 ## 连接
 
@@ -106,15 +95,20 @@ ssh-keygen -t ed25519 -C "your_email@example.com"
 
 公钥位置：
 
+::: tabs
+== Linux / macOS
+
 ```text
 ~/.ssh/id_ed25519.pub
 ```
 
-Windows 通常在：
+== Windows
 
 ```text
 C:\Users\你的用户名\.ssh\id_ed25519.pub
 ```
+
+:::
 
 ### 上传公钥
 
@@ -129,15 +123,20 @@ C:\Users\你的用户名\.ssh\id_ed25519.pub
 
 客户端配置：
 
+::: tabs
+== Linux / macOS
+
 ```text
 ~/.ssh/config
 ```
 
-Windows：
+== Windows
 
 ```text
 C:\Users\你的用户名\.ssh\config
 ```
+
+:::
 
 示例：
 
@@ -159,22 +158,47 @@ C:\ProgramData\ssh\sshd_config
 
 修改后重启：
 
-| 系统 | 命令 |
-| --- | --- |
-| Linux | `sudo systemctl restart sshd` |
-| Windows | `Restart-Service sshd` |
+::: tabs
+== Linux
+
+```bash
+sudo systemctl restart sshd
+```
+
+== Windows
+
+```powershell
+Restart-Service sshd
+```
+
+:::
 
 ## 常见排查
 
 | 用途 | 命令 |
 | --- | --- |
 | 看版本 | `ssh -V` |
-| Linux 看服务 | `sudo systemctl status sshd` |
-| Windows 看服务 | `Get-Service sshd` |
-| Linux 看端口 | `ss -tlnp \| grep :22` |
-| Windows 看端口 | `netstat -ano \| findstr :22` |
 | 测配置 | `sudo sshd -t` |
 | 看日志 | `sudo journalctl -u sshd -xe` |
+
+服务与端口：
+
+::: tabs
+== Linux
+
+```bash
+sudo systemctl status sshd
+ss -tlnp | grep :22
+```
+
+== Windows
+
+```powershell
+Get-Service sshd
+netstat -ano | findstr :22
+```
+
+:::
 
 常见原因：
 

@@ -2,7 +2,7 @@
 layout: home
 # 首页部分元素定制
 blog:
- name: '高木木@gl'
+ name: '林九序@gl'
  motto: '学无止境'
  inspiring:
   - 千万不要因为走得太久，而忘记了我们为什么出发
