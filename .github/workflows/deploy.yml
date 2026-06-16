@@ -58,3 +58,36 @@ jobs:
 
       - name: Cleanup local tarball
         run: rm -f blog-dist.tar.gz
+
+      - name: Notify WeCom
+        if: always()
+        run: |
+          STATUS="${{ job.status }}"
+          if [ "$STATUS" = "success" ]; then
+            ICON="✅"
+            COLOR="info"
+            TITLE="部署成功"
+          else
+            ICON="❌"
+            COLOR="warning"
+            TITLE="部署失败"
+          fi
+          COMMIT=$(git log -1 --pretty=format:'%h %s')
+          AUTHOR=$(git log -1 --pretty=format:'%an')
+          TIME=$(date '+%F %T')
+          RUN_URL="${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}"
+
+          JSON=$(cat <<EOF
+          {
+            "msgtype": "markdown",
+            "markdown": {
+              "content": "## ${ICON} 博客 ${TITLE}\n> 提交：<font color=\"comment\">${COMMIT}</font>\n> 作者：${AUTHOR}\n> 时间：${TIME}\n> [查看详情](${RUN_URL})"
+            }
+          }
+          EOF
+          )
+
+          curl -s -X POST \
+            -H "Content-Type: application/json" \
+            -d "$JSON" \
+            "${{ secrets.WECOM_WEBHOOK }}"
