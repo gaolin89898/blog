@@ -13,9 +13,7 @@ description: 通过 CSS mask 反转边框半径，实现图片内凹角效果
 <img src="https://picsum.photos/id/1022/300/300" class="top-left">
 </div>
 
-<script>
-  import './index.css'
-</script>
+> CSS 文件：[assets/mask-border-radius.css](assets/mask-border-radius.css)
 
 ```html
 <div class="mask-container">

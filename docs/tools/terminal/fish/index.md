@@ -10,10 +10,7 @@ description: Fish Shell 安装、配置和排查速查
 
 ## 安装
 
-::: tabs
-== Linux
-
-```bash
+```bash {"title":"Linux"}
 # Debian / Ubuntu
 sudo apt update && sudo apt install -y fish
 
@@ -27,7 +24,6 @@ sudo pacman -S --needed fish
 sudo zypper install -y fish
 ```
 
-:::
 
 ## 启动和默认 Shell
 
@@ -120,10 +116,7 @@ chsh -s /bin/bash
 
 卸载：
 
-::: tabs
-== Linux
-
-```bash
+```bash {"title":"Linux"}
 # Debian / Ubuntu
 sudo apt remove -y fish
 
@@ -134,4 +127,3 @@ sudo dnf remove -y fish
 sudo pacman -Rns fish
 ```
 
-:::

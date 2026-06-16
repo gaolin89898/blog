@@ -11,10 +11,7 @@ SSH 常用于远程登录服务器、传输文件，以及通过密钥访问 Git
 
 ## 安装与启动
 
-::: tabs
-== Linux
-
-```bash
+```bash {"title":"Linux"}
 # Debian / Ubuntu
 sudo apt update
 sudo apt install -y openssh-client openssh-server
@@ -30,9 +27,7 @@ sudo systemctl status sshd
 ssh localhost
 ```
 
-== Windows
-
-```powershell
+```powershell {"title":"Windows"}
 ssh -V
 Get-Service sshd
 
@@ -44,14 +39,10 @@ Set-Service -Name sshd -StartupType Automatic
 Get-Service sshd
 ```
 
-:::
 
 ## 防火墙
 
-::: tabs
-== Linux
-
-```bash
+```bash {"title":"Linux"}
 # Debian / Ubuntu
 sudo ufw allow ssh
 
@@ -60,13 +51,10 @@ sudo firewall-cmd --permanent --add-service=ssh
 sudo firewall-cmd --reload
 ```
 
-== Windows
-
-```powershell
+```powershell {"title":"Windows"}
 New-NetFirewallRule -Name sshd -DisplayName "OpenSSH Server (sshd)" -Enabled True -Direction Inbound -Protocol TCP -Action Allow -LocalPort 22
 ```
 
-:::
 
 ## 连接
 
@@ -95,20 +83,14 @@ ssh-keygen -t ed25519 -C "your_email@example.com"
 
 公钥位置：
 
-::: tabs
-== Linux / macOS
-
-```text
+```text {"title":"Linux / macOS"}
 ~/.ssh/id_ed25519.pub
 ```
 
-== Windows
-
-```text
+```text {"title":"Windows"}
 C:\Users\你的用户名\.ssh\id_ed25519.pub
 ```
 
-:::
 
 ### 上传公钥
 
@@ -123,20 +105,14 @@ C:\Users\你的用户名\.ssh\id_ed25519.pub
 
 客户端配置：
 
-::: tabs
-== Linux / macOS
-
-```text
+```text {"title":"Linux / macOS"}
 ~/.ssh/config
 ```
 
-== Windows
-
-```text
+```text {"title":"Windows"}
 C:\Users\你的用户名\.ssh\config
 ```
 
-:::
 
 示例：
 
@@ -158,20 +134,14 @@ C:\ProgramData\ssh\sshd_config
 
 修改后重启：
 
-::: tabs
-== Linux
-
-```bash
+```bash {"title":"Linux"}
 sudo systemctl restart sshd
 ```
 
-== Windows
-
-```powershell
+```powershell {"title":"Windows"}
 Restart-Service sshd
 ```
 
-:::
 
 ## 常见排查
 
@@ -183,22 +153,16 @@ Restart-Service sshd
 
 服务与端口：
 
-::: tabs
-== Linux
-
-```bash
+```bash {"title":"Linux"}
 sudo systemctl status sshd
 ss -tlnp | grep :22
 ```
 
-== Windows
-
-```powershell
+```powershell {"title":"Windows"}
 Get-Service sshd
 netstat -ano | findstr :22
 ```
 
-:::
 
 常见原因：
 

@@ -11,8 +11,8 @@ description: 前端 UI 样式与特效实现，涵盖边框、按钮、动画、
 
 ## 🔥 🌟 精选样式
 
-- [好看的 开关](./toddle-dark/index.md)
-- [内发光效果](./internal-glow//index.md)
+- [好看的开关](./cool-switch/index.md)
+- [内发光效果](./internal-glow/index.md)
 
 ## 📂 样式集合
 

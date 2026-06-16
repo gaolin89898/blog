@@ -10,9 +10,7 @@ description: 内发光卡片样式，使用渐变边框与模糊制造光晕效�
   <span>我是一张散发内在光芒的卡片</span> 
 </div>
 
-<script>
- import './index.css'
-</script>
+> CSS 文件：[assets/internal-glow.css](assets/internal-glow.css)
 
 ```html
 <div class="internal-card">

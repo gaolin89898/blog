@@ -10,9 +10,7 @@ description: 彩虹渐变边框光晕效果，使用 conic-gradient 与模糊扩
   </div>
 </div>
 
-<script>
-  import './index.css'
-</script>
+> CSS 文件：[assets/rainbow-border.css](assets/rainbow-border.css)
 
 ```html
 <div class="rainbow-glow">

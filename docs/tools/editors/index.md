@@ -11,4 +11,4 @@ description: 编辑器相关工具与插件推荐
 
 ## 文档入口
 
-- <img src="/icons/brands/visualstudiocode.svg" width="16" style="vertical-align: middle;" /> [Linux VS Code 更新配置](./linux-vscode-update.md)
+- [Linux VS Code 更新配置](Linux-vscode 更新配置.md)

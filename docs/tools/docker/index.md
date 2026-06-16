@@ -9,10 +9,7 @@ description: Docker 安装、配置和常用命令速查
 
 ## 安装
 
-::: tabs
-== Linux
-
-```bash
+```bash {"title":"Linux"}
 # Debian / Ubuntu
 sudo apt update
 sudo apt install -y docker.io docker-compose-plugin
@@ -25,13 +22,10 @@ sudo dnf install -y docker docker-compose-plugin
 sudo pacman -S --needed docker docker-compose
 ```
 
-== 官方脚本
-
-```bash
+```bash {"title":"官方脚本"}
 curl -fsSL https://get.docker.com | sudo sh
 ```
 
-:::
 
 ## 启动
 
