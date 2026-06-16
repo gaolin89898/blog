@@ -1,0 +1,60 @@
+name: Deploy Blog
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build-and-deploy:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - uses: pnpm/action-setup@v4
+        with:
+          version: 10
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: pnpm
+
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+
+      - name: Build
+        run: pnpm run build
+
+      - name: Package dist
+        run: tar -czf blog-dist.tar.gz dist/
+
+      - name: Upload to server
+        uses: appleboy/scp-action@v0.1.7
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          source: "blog-dist.tar.gz"
+          target: "/tmp/"
+
+      - name: Deploy
+        uses: appleboy/ssh-action@v1
+        with:
+          host: ${{ secrets.SERVER_HOST }}
+          username: ${{ secrets.SERVER_USER }}
+          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          script: |
+            set -e
+            rm -rf /var/www/blog
+            mkdir -p /var/www/blog
+            tar -xzf /tmp/blog-dist.tar.gz -C /var/www/blog --strip-components=1
+            rm /tmp/blog-dist.tar.gz
+            echo "Deploy OK: $(date '+%F %T')"
+            du -sh /var/www/blog
+
+      - name: Cleanup local tarball
+        run: rm -f blog-dist.tar.gz
