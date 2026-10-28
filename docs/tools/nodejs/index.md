@@ -39,8 +39,8 @@ winget install OpenJS.NodeJS
 
 多项目切换版本时优先用：
 
-- [fnm](./version-management/fnm/index.md)
-- [nvm / nvm-windows](./version-management/nvm/index.md)
+- [fnm](../../backend/nodejs/version-management/fnm/index.md)
+- [nvm / nvm-windows](../../backend/nodejs/version-management/nvm/index.md)
 
 ## 验证
 

@@ -32,7 +32,7 @@ const blogTheme = getThemeConfig({
     copyright: 'MIT License | 林九序',
     icpRecord: {
       name: '陕ICP备2026001608号-1',
-      link: 'https://beian.miit.gov.cn/'
+      link: 'https://beian.mit.gov.cn/'
     },
     // securityRecord: {
     //   name: '公网安备xxxxx',

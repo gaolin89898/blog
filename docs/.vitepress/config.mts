@@ -9,8 +9,8 @@ import { tabsMarkdownPlugin } from "vitepress-plugin-tabs";
 export default defineConfig({
   extends: blogTheme,
   lang: "zh-cn",
-  title: "林九序的博客",
-  description: "林九序的博客，基于 vitepress 实现",
+  title: "GL的个人网站",
+  description: "GL的个人网站，基于 vitepress 实现",
   outDir: "../dist",
   lastUpdated: true,
   cleanUrls: true,

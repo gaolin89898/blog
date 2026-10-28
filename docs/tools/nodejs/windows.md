@@ -60,7 +60,7 @@ npm -v
 
 详细文档：
 
-- [Windows-nvm](./windows-nvm.md)
+- [Windows-nvm](../../backend/nodejs/version-management/nvm/index.md)
 
 ## 验证 Node.js 是否可用
 
