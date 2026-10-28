@@ -62,6 +62,11 @@ jobs:
       - name: Notify WeCom
         if: always()
         run: |
+          WEBHOOK="${{ secrets.WECOM_WEBHOOK }}"
+          if [ -z "$WEBHOOK" ]; then
+            echo "WECOM_WEBHOOK 未配置，跳过企业微信通知"
+            exit 0
+          fi
           STATUS="${{ job.status }}"
           if [ "$STATUS" = "success" ]; then
             ICON="✅"
@@ -90,4 +95,4 @@ jobs:
           curl -s -X POST \
             -H "Content-Type: application/json" \
             -d "$JSON" \
-            "${{ secrets.WECOM_WEBHOOK }}"
+            "$WEBHOOK"

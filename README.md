@@ -55,7 +55,7 @@ pnpm serve
 2. 将 `dist/` 打包上传到服务器，清空 `/var/www/blog` 后解压（全量覆盖）
 3. 部署结果通过企业微信机器人通知
 
-需要在仓库 Secrets 中配置：`SERVER_HOST`、`SERVER_USER`、`SSH_PRIVATE_KEY`。
+需要在仓库 Secrets 中配置：`SERVER_HOST`、`SERVER_USER`、`SSH_PRIVATE_KEY`；企微通知另需 `WECOM_WEBHOOK`（未配置时仅跳过通知，不影响部署）。
 
 ### 方式二：本地手动部署
 
