@@ -3,4 +3,5 @@ dist
 cache
 .temp
 .DS_Store
+deploy-config.json
 

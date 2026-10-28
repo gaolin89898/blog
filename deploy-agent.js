@@ -2,8 +2,15 @@ const { execSync } = require("child_process");
 const fs = require("fs");
 const path = require("path");
 
-function deploy(password) {
+function deploy({ password, host, user, remotePath }) {
   try {
+    if (!host || !user || !remotePath) {
+      console.error(
+        "错误：deploy-config.json 缺少 host / user / remotePath 配置（该文件不入仓库，仅在本地维护）"
+      );
+      process.exit(1);
+    }
+
     console.log("开始提交代码...");
     // 检查是否有未提交的更改
     const statusOutput = execSync("git status --porcelain", { encoding: "utf8" });
@@ -41,12 +48,13 @@ function deploy(password) {
     const wslDistPath = execSync(`wsl wslpath -a "${distPath}"`, { encoding: "utf8" }).trim();
     
     let scpCommand;
+    const target = `${user}@${host}:${remotePath}/`;
     if (password) {
       // 使用 WSL 中的 sshpass 传递密码
-      scpCommand = `wsl sshpass -p "${password}" scp -r -o StrictHostKeyChecking=no "${wslDistPath}"/\* root@8.162.12.148:/var/www/blog/`;
+      scpCommand = `wsl sshpass -p "${password}" scp -r -o StrictHostKeyChecking=no "${wslDistPath}"/\* ${target}`;
     } else {
       // 不使用密码，需要手动输入
-      scpCommand = `wsl scp -r -o StrictHostKeyChecking=no "${wslDistPath}"/\* root@8.162.12.148:/var/www/blog/`;
+      scpCommand = `wsl scp -r -o StrictHostKeyChecking=no "${wslDistPath}"/\* ${target}`;
     }
     
     execSync(scpCommand, {
@@ -77,26 +85,26 @@ function parseArgs() {
 
 // 执行部署
 if (require.main === module) {
-  let password;
-  
-  // 首先尝试从命令行参数获取密码
+  const configPath = path.join(__dirname, "deploy-config.json");
+
+  let config = {};
+  if (fs.existsSync(configPath)) {
+    try {
+      config = JSON.parse(fs.readFileSync(configPath, "utf8"));
+    } catch (error) {
+      console.error("读取配置文件失败：", error.message);
+    }
+  } else {
+    console.error("错误：未找到 deploy-config.json（已不入仓库，需在本地创建）");
+  }
+
+  // 命令行参数中的密码优先于配置文件
   const options = parseArgs();
   if (options.password) {
-    password = options.password;
-  } else {
-    // 然后尝试从配置文件获取密码
-    const configPath = path.join(__dirname, "deploy-config.json");
-    if (fs.existsSync(configPath)) {
-      try {
-        const config = JSON.parse(fs.readFileSync(configPath, "utf8"));
-        password = config.password;
-      } catch (error) {
-        console.error("读取配置文件失败：", error.message);
-      }
-    }
+    config.password = options.password;
   }
-  
-  deploy(password);
+
+  deploy(config);
 }
 
 module.exports = deploy;

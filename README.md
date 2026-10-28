@@ -45,7 +45,7 @@ pnpm serve
 
 ## 部署
 
-站点部署在阿里云服务器 `8.162.12.148` 的 `/var/www/blog`，nginx 以 `www.gaolin.xin` 提供服务。有两条部署路径：
+站点部署在个人云服务器上（服务器地址等敏感信息不写入仓库，本地部署配置见 `deploy-config.json`，已加入 `.gitignore`）。有两条部署路径：
 
 ### 方式一：GitHub Actions 自动部署（推荐）
 
