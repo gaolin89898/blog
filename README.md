@@ -89,7 +89,7 @@ docs/
 域名已完成 ICP 备案（**陕ICP备2026001608号-1**），以下是审核硬性要求，**修改配置时不要动这两处**，否则备案会被驳回：
 
 1. 浏览器标签页标题必须包含备案网站名「**GL的个人网站**」（`config.mts` 的 `title` 字段）；
-2. 每个页面底部显著位置悬挂备案号，并链接到工信部备案管理系统 `https://beian.mit.gov.cn/`（`blog-theme.ts` 的 `footer.icpRecord`）。
+2. 每个页面底部显著位置悬挂备案号，并链接到工信部备案管理系统 `https://beian.miit.gov.cn/`（`blog-theme.ts` 的 `footer.icpRecord`）。
 
 ## 相关链接
 
