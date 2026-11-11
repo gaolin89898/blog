@@ -76,7 +76,7 @@ docs/
 ├── backend/            # 后端开发（Node.js、Nginx、服务器）
 ├── tools/              # 工具（编辑器、终端、Git、Docker、SSH、rclone、自动化、WSL、Node.js）
 ├── ai/                 # AI 工具（OpenCode、OpenClow 及插件）
-├── projects/           # 项目实战（RFID、桌宠、桌面自动化、Linux 踩坑）
+├── projects/           # 项目实战（轻盈有数、RFID、桌宠、桌面自动化、Linux 踩坑）
 ├── daily/              # 工作日报
 ├── blog-config/        # 博客配置记录（评论模块等）
 └── public/             # 静态资源（favicon、logo、icons）

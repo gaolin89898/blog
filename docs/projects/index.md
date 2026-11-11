@@ -10,6 +10,7 @@ description: 项目实战记录与方案沉淀
 
 ## 📂 项目
 
+- [轻盈有数](./lose-weight/index.md) — 饮食记录/体重管理 App（Flutter + 后台 + 官网），线上：<https://light.gaolin.xin>
 - [RFID 项目](./rfid/index.md) — RFID 档案管理相关
 - [桌宠项目](./desktop-pet/index.md) — 跨平台桌面宠物软件
 - [桌面与自动化](./desktop-automation/index.md) — InputLeap、双主机工作流

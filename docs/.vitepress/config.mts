@@ -149,6 +149,10 @@ export default defineConfig({
             text: "桌宠项目",
             link: "/projects/desktop-pet/index.md",
           },
+          {
+            text: "轻盈有数",
+            link: "/projects/lose-weight/index.md",
+          },
         ],
       },
       {
@@ -167,6 +171,10 @@ export default defineConfig({
       {
         text: "线上作品",
         items: [
+          {
+            text: "轻盈有数（饮食记录 App）",
+            link: "https://light.gaolin.xin/",
+          },
           {
             text: "个人图床",
             link: "http://openlist.gaolin.xin/",
